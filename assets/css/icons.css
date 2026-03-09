@@ -1,0 +1,33 @@
+
+
+.icon-botas{
+    content: url("../img/icons/botas.svg");
+    width: 24px;
+    height: 24px;
+}
+
+.icon-right{
+    content: url("../img/icons/arrow-right.svg");
+}
+.slid-arrow-left{
+    content: url("../img/icons/slid-arrow-left.svg");
+}
+.slid-arrow-right{
+    content: url("../img/icons/slid-arrow-right.svg");
+}
+
+.location-map{
+    content: url("../img/icons/location-map.svg");
+}
+
+.arrow-move-right{
+    content: url("../img/icons/arrow-move-right.svg");
+}
+
+.icon-vandak{
+    content: url("../img/icons/icon-vandak.svg");
+}
+
+.icon-vandal-line{
+    content: url("../img/icons/icon-vandal-line.svg");
+}
