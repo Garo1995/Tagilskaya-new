@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function () {
-
     $('select').styler();
-
-
     $('.open-menu').on('click', function () {
         $(this).toggleClass('close-menu');
         if ($(this).hasClass('close-menu')) {
@@ -51,7 +48,6 @@ $(document).ready(function () {
         $('.open-menu').removeClass('close-menu');
     })
 });
-
 
 $('.head-menu ul li a').on('click', function () {
     $('.head-menu').removeClass('menu-opened');
@@ -74,69 +70,6 @@ $(window).on('click', function (e) {
 
 });
 
-
-
-
-$('.see-more-news').on('click', function () {
-    $('.news-block-mobile').toggleClass('news-block-opened');
-})
-
-
-
-
-
-
-
-
-
-$('.open_modal').on('click', function () {
-    let attr = $(this).attr('data-val');
-    let modal = $('#' + attr);
-    modal.removeClass('out');
-    modal.fadeIn();
-    $('body').addClass('body_fix');
-});
-
-$('.close').on('click', function () {
-
-    $('body').removeClass('body_fix');
-    let prt = $(this).parents('.modal');
-
-    prt.addClass('out')
-    setTimeout(function () {
-        prt.fadeOut();
-    }, 100);
-});
-
-$(window).on('click', function (event) {
-
-
-    $('.modal').each(function () {
-        let gtattr = $(this).attr('id');
-        let new_mod = $('#' + gtattr);
-        let md_cnt = $(new_mod).find('.modal-content');
-        if (event.target === $(md_cnt)[0]) {
-            setTimeout(function () {
-                $(new_mod).addClass('out');
-                $(new_mod).fadeOut()
-            }, 100)
-            $('body').removeClass('body_fix');
-        }
-        if (event.target === this) {
-            setTimeout(function () {
-                $(new_mod).addClass('out');
-                $(new_mod).fadeOut()
-            }, 100)
-        }
-    })
-});
-
-
-
-
-
-
-
 $('.menu-scroll a').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
         && location.hostname == this.hostname) {
@@ -157,10 +90,14 @@ $('.menu-scroll a').click(function() {
 
 
 
+/*===========--header-style-end===========*/
 
 
 
 
+$('.see-more-news').on('click', function () {
+    $('.news-block-mobile').toggleClass('news-block-opened');
+})
 
 
 
@@ -183,7 +120,6 @@ $('.select-param').on('click', function () {
 
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function() {
-
         const modalSelector = this.dataset.modalTarget;
         const modal = document.querySelector(modalSelector);
         if (!modal) return;
@@ -193,47 +129,16 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 
-document.querySelectorAll('.modal-overlay').forEach(modal => {
-
-    const closeBtn = modal.querySelector('.modal-close');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            closeModal(modal);
-        });
-    }
-
-    modal.addEventListener('click', (e) => {
-        const modalWindow = modal.querySelector('.modal-window');
-        if (e.target === modal) {
-            closeModal(modal);
-            return;
-        }
-
-        if (e.target === modalWindow) {
-            closeModal(modal);
-        }
-    });
-
-});
-
-
-function closeModal(modal) {
-    modal.classList.remove('active');
-    document.body.classList.remove('modal-open');
-}
 
 $('.open-floor-boxis').on('click', function () {
     $('.floor-plan').addClass('floor-plan-none');
     $('.floor-room-boxis').addClass('floor-room-opened');
 })
 $('.floor-svg-box').on('click', function () {
-
     $('.floor-plan').addClass('floor-plan-none');
     $('.floor-room-boxis').addClass('floor-room-opened');
-
 })
 $('.found-cnt-box').on('click', function () {
-
     $('.floor-plan').addClass('floor-plan-none');
     $('.floor-room-boxis').addClass('floor-room-opened');
 
@@ -298,46 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 $('.map-all-object').on('click', function () {
     $('.infrast-map-cnt').addClass('touchstart-open');
     $('body').addClass('body-fon');
 })
-
-
-
-let startY = 0;
-let endY = 0;
-let threshold = 50;
-let canClose = false;
-
-$('.touchstart').on('touchstart', function (e) {
-    const isDragZone = $(e.target).closest('.modal-drag-zone').length > 0;
-
-    canClose = isDragZone;
-    startY = e.originalEvent.touches[0].clientY;
-});
-
-$('.touchstart').on('touchmove', function (e) {
-    endY = e.originalEvent.touches[0].clientY;
-});
-
-$('.touchstart').on('touchend', function () {
-
-    if (!canClose) return;
-
-    if (endY - startY > threshold) {
-        $(this).removeClass('touchstart-open');
-        $('body').removeClass('body-fon modal-open');
-        $('.modal-overlay').removeClass('active');
-        $('.select-property').removeClass('select-property-open');
-    }
-});
-
-
-
-
-
 
 
 
@@ -363,14 +232,80 @@ $(document).ready(function () {
 
 
 
+/*===========-modal-start-============*/
+
+
+let startY = 0;
+let moveY = 0;
+let threshold = 120;
+
+$('.open-modal').magnificPopup({
+    type: 'inline',
+    removalDelay: 300,
+    midClick: true,
+
+    mainClass: 'my-mfp-slide-bottom',
+    fixedContentPos: true, // фиксирует контент и убирает скролл страницы
+
+    callbacks: {
+        open: function () {
+
+            const modal = $('.mfp-content');
+
+            modal.on('touchstart', function (e) {
+                startY = e.originalEvent.touches[0].clientY;
+                modal.css('transition', 'none');
+            });
+
+            modal.on('touchmove', function (e) {
+
+                moveY = e.originalEvent.touches[0].clientY - startY;
+
+                if (moveY > 0) {
+                    modal.css('transform', `translateY(${moveY}px)`);
+                }
+
+            });
+
+            modal.on('touchend', function () {
+
+                modal.css('transition', 'transform 0.25s ease');
+
+                if (moveY > threshold) {
+
+                    modal.css('transform', 'translateY(100%)');
+
+                    setTimeout(function(){
+                        $.magnificPopup.close();
+                    },200);
+
+                } else {
+
+                    modal.css('transform', 'translateY(0)');
+                }
+
+                moveY = 0;
+
+            });
+
+        }
+    }
+});
 
 
 
+
+
+
+
+
+let canClose = false;
 
 
 $('.open-filter-mobile').on('click', function (e) {
     e.stopPropagation();
     $('.floor-plan-fixed').addClass('plan-fixed-open');
+    $('body').addClass('body-fixed');
 
 });
 
@@ -386,6 +321,7 @@ $('.floor-plan-fixed').on('touchmove', function (e) {
 $('.floor-plan-fixed').on('touchend', function () {
     if (endY - startY > threshold) {
         $(this).removeClass('plan-fixed-open');
-        console.log('Свайп вниз — окно закрыто');
+        $('body').removeClass('body-fixed');
+
     }
 });

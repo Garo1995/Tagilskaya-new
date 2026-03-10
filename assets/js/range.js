@@ -86,6 +86,8 @@ document.querySelectorAll(".filter-box").forEach(box => {
 $('.sort-floor').on('click', function (e) {
     e.stopPropagation();
     $('.sort-floor-abs').toggleClass('sort-floor-abs-act');
+    $('body').addClass('body-fixed');
+
 })
 
 
@@ -101,7 +103,8 @@ $('.sort-floor-abs').on('touchmove', function (e) {
 $('.sort-floor-abs').on('touchend', function () {
     if (endY - startY > threshold) {
         $(this).removeClass('sort-floor-abs-act');
-        console.log('Свайп вниз — окно закрыто');
+        $('body').removeClass('body-fixed');
+
     }
 });
 

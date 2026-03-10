@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
@@ -62,12 +63,12 @@
                                    <h6>6 минут от МЦК «Бульвар Рокоссовского»</h6>
                                </div>
                                 <div class="presentation-btn">
-                                    <button data-modal-target="#modal-form" class="card btn-arrow">
+                                    <a href="#modal1" class="open-modal btn-arrow">
                                         Выбрать офис
                                         <span class="circle-arrow">
                                             <i class="icon-right"></i>
                                         </span>
-                                    </button>
+                                    </a>
                                     <a href="#" download="" class="presentation-dow">
                                         <span>Смотреть презентацию</span>
                                         <i class="icon-pdf"></i>
@@ -83,12 +84,12 @@
 
                                 </div>
                                 <div class="presentation-btn">
-                                    <button data-modal-target="#modal-form" class="card btn-arrow">
+                                    <a href="#modal1" class="open-modal btn-arrow">
                                         Выбрать офис
                                         <span class="circle-arrow">
                                             <i class="icon-right"></i>
                                         </span>
-                                    </button>
+                                    </a>
                                     <a href="#" download="" class="presentation-dow">
                                         <span>Смотреть презентацию</span>
                                         <i class="icon-pdf"></i>
@@ -103,12 +104,12 @@
                                     <h6>6 минут от МЦК «Бульвар Рокоссовского»</h6>
                                 </div>
                                 <div class="presentation-btn">
-                                    <button data-modal-target="#modal-form" class="card btn-arrow">
+                                    <a href="#modal1" class="open-modal btn-arrow">
                                         Выбрать офис
                                         <span class="circle-arrow">
                                             <i class="icon-right"></i>
                                         </span>
-                                    </button>
+                                    </a>
                                     <a href="#" download="" class="presentation-dow">
                                         <span>Смотреть презентацию</span>
                                         <i class="icon-pdf"></i>
@@ -221,7 +222,10 @@
 <section class="offices-benefits">
     <div class="container">
         <div class="global-title G-align-center G-justify-between">
-            <h2>Офисы с максимальной выгодой</h2>
+            <div class="offices-benef-title G-align-center">
+                <h2>Офисы с максимальной выгодой</h2>
+                <span class="discounts-up">Скидки до -23%</span>
+            </div>
             <div class="arrow-slid-btn G-align-center">
                 <div class="offices-button-prev swiper-button-prev" ></div>
                 <div class="offices-button-next swiper-button-next" ></div>
@@ -401,13 +405,14 @@
 
 
 
-<section class="section-margin">
+<section id="location" class="section-margin">
     <div class="container">
         <div class="global-title">
             <h2>Локация делового центра</h2>
         </div>
         <div class="location-business G-flex">
-            <img src="./assets/img/location.png" alt="location">
+            <img src="./assets/img/location.png" class="location-desctop" alt="location">
+            <img src="./assets/img/location-mobile.png" class="location-mobile" alt="location">
            <div class="location-rel">
                <div class="location-fon G-align-center G-justify-between">
                    <div class="location-name G-align-center">
@@ -439,8 +444,9 @@
                        <p>до центра <br> Москвы</p>
                    </div>
                </div>
+               <button class="btn-tax-office">Налоговая № 18</button>
+
            </div>
-            <button class="btn-tax-office">Налоговая № 18</button>
         </div>
     </div>
 </section>
@@ -1098,36 +1104,47 @@
                                 <div class="swiper select-layout-slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <div class="select-layout-svg">
+                                            <div class="found-cnt-box select-layout-svg">
                                                 <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1">
+                                                <div class="parameters-floor-zoom">
+                                                    <i class="icon-search"></i>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="swiper-slide">
-                                            <div class="select-layout-svg">
+                                            <div class="found-cnt-box select-layout-svg">
                                                 <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1">
+                                                <div class="parameters-floor-zoom">
+                                                    <i class="icon-search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
-                                            <div class="select-layout-svg">
+                                            <div class="found-cnt-box select-layout-svg">
                                                 <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1-f9">
+                                                <div class="parameters-floor-zoom">
+                                                    <i class="icon-search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
-                                            <div class="select-layout-svg">
+                                            <div class="found-cnt-box select-layout-svg">
                                                 <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1-f14">
+                                                <div class="parameters-floor-zoom">
+                                                    <i class="icon-search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
-                                            <div class="select-layout-svg">
+                                            <div class="found-cnt-box select-layout-svg">
                                                 <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1-f15">
+                                                <div class="parameters-floor-zoom">
+                                                    <i class="icon-search"></i>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="select-layout-svg">
-                                                <img src="./assets/img/b2-s1-f1.svg" alt="b2-s1-f17">
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -1301,14 +1318,15 @@
 
 
 
-<section id="location" class="section-margin">
+<section  class="section-margin">
     <div class="container">
         <div class="global-title">
             <h2>Выгодные условия аренды и инвестиций</h2>
         </div>
         <div class="peaceful-flex G-flex">
             <div class="peaceful-photo G-flex">
-                <img src="./assets/img/AFI-Tagilskaya-bash.png" alt="Tagilskaya">
+                <img src="./assets/img/AFI-Tagilskaya-bash.png" class="peaceful-photo-desc" alt="Tagilskaya">
+                <img src="./assets/img/AFI-Tagilskaya-bash-mob.png" class="peaceful-photo-mob" alt="Tagilskaya">
                 <div class="peaceful-name">
                     <h3>Престижная локация</h3>
                     <span class="title-line"></span>
@@ -1378,7 +1396,7 @@
                 </div>
             </div>
 
-            <div class="stable-space-flex G-flex">
+            <div class="timeline-wrapper stable-space-flex G-flex">
                 <div class="stable-space-cont">
                     <div class="stable-space-bet G-justify-between">
                         <div class="stable-space-number js-top-item ">
@@ -1395,29 +1413,27 @@
                             <p>Срок окупаемости при сдаче в аренду**</p>
                         </div>
                     </div>
+                        <div class="timeline">
 
-                    <div class="timeline">
-                        <div class="timeline-ticks" id="ticks"></div>
+                            <div class="timeline-ticks" id="ticks"></div>
+                            <div class="timeline-track" id="track">
+                                <div class="timeline-progress" id="progress"></div>
+                                <div class="timeline-thumb" id="thumb">
+                                    <div class="tooltip" id="tooltip">2 год</div>
+                                </div>
+                            </div>
 
-                        <div class="timeline-track" id="track">
-                            <div class="timeline-progress" id="progress"></div>
-                            <div class="timeline-thumb" id="thumb">
-                                <div class="tooltip" id="tooltip">2 год</div>
+                            <div class="timeline-labels" id="labels"></div>
+
+                            <div class="timeline-track-mobile">
+                                <ul>
+                                    <li data-year="2028">3 года</li>
+                                    <li data-year="2030">5 лет</li>
+                                    <li data-year="2032">7 лет</li>
+                                </ul>
                             </div>
                         </div>
-
-                        <div class="timeline-labels" id="labels"></div>
-
-                        <div class="timeline-track-mobile">
-                            <ul>
-                                <li data-year="2028">3 года</li>
-                                <li data-year="2030">5 лет</li>
-                                <li data-year="2032">7 лет</li>
-                            </ul>
-                        </div>
                     </div>
-
-                </div>
                 <div class="profit-sale">
                     <div class="profit-sale-info">
                         <p>Прибыль от продажи объекта</p>
@@ -1429,7 +1445,7 @@
                     <div class="profit-sale-info">
                         <p>Прибыль от сдачи в аренду</p>
                         <div class="profit-sale-price">
-                            <span>0₽</span>
+                            <span>0 ₽</span>
                             <span>0%</span>
                         </div>
                     </div>
@@ -1553,7 +1569,7 @@
 
 
 
-<section class="projects-completed">
+<section class="gallery-completed">
     <div class="container">
         <div class="global-title G-align-center G-justify-between">
             <h2>Галерея</h2>
@@ -1635,8 +1651,14 @@
             <div class="developer-ren-cnt" style="background-image: url('./assets/img/developer-1.svg')">
                 <div class="developer-ren-name">
                     <img src="./assets/img/wafiidievelopment.svg" alt="wafiidievelopment">
-                    <h3>Надёжный застройщик</h3>
+                    <div class="G-align-center G-justify-between">
+                        <h3>Надёжный застройщик</h3>
+                        <a href="#" class="arrow-top-rig">
+                            <i class="icon-right"></i>
+                        </a>
+                    </div>
                 </div>
+
             </div>
             <div class="developer-ren-wrap G-flex-wrap">
                 <div class="developer-boxes">
@@ -1839,7 +1861,7 @@
             <div class="swiper news-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1848,7 +1870,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1857,7 +1879,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1866,7 +1888,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1875,7 +1897,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1884,7 +1906,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1893,7 +1915,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1902,7 +1924,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1911,7 +1933,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1920,7 +1942,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-modal-target="#modal-news" class="card news-box" >
+                        <div href="#modal-news"  class="open-modal news-box" >
                             <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                             <h3 class="get-news-title">24 года на рынке России</h3>
                             <p class="get-news-text">
@@ -1934,42 +1956,42 @@
 
         <div class="news-block-mobile">
             <div class="news-block-wrap">
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
@@ -1977,14 +1999,14 @@
                     </p>
                 </div>
 
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
                         Есть вентиляция, естественное проветривание и отдельный вход — это важно для медицинских центров и кабинетов кабинетовкабинетов а…
                     </p>
                 </div>
-                <div data-modal-target="#modal-news" class="card news-box" >
+                <div href="#modal-news"  class="open-modal news-box" >
                     <img class="get-news-photo" src="./assets/img/park1.jpg" alt="park">
                     <h3 class="get-news-title">24 года на рынке России</h3>
                     <p class="get-news-text">
@@ -2058,7 +2080,7 @@
 
 
 <div class="floor-plan">
-    <div class="container">
+    <div class="container" >
         <div class="floor-header">
             <div class="header-main G-align-center G-justify-between">
                 <div class="close-all-filter back-floor-sel"></div>
@@ -2098,9 +2120,8 @@
                 <i class="arrow-move-right"></i> назад
             </div>
         </div>
-
         <div class="floor-plan-range G-align-center G-justify-between ">
-            <div class="floor-plan-fiv  G-align-end G-justify-between">
+            <div class="floor-plan-fiv G-align-end G-justify-between">
                 <div class="floor-plan-fixed">
                     <span class="floor-plan-line"></span>
                     <strong>Фильтр</strong>
@@ -2208,23 +2229,390 @@
                     </div>
                 </div>
 
-                <div class="real-estate-filter G-align-center">
-                    <ul>
-                        <li data-type="card" class="select-params params-active">
-                            <i class="icon-vandak"></i>
-                        </li>
-                        <li data-type="list" class="select-params">
-                            <i class="icon-vandal-line"></i>
-                        </li>
-                    </ul>
-                </div>
 
             </div>
         </div>
 
 
-    </div>
+        <div class="real-estate-content">
+            <div class="found-cnt-scroll">
+                <div class="found-cnt-flex G-flex-wrap">
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
 
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="found-cnt-box">
+                        <div class="found-cnt-photo G-center">
+                            <img src="./assets/img/floor.svg" alt="resource">
+                        </div>
+                        <div class="found-cnt-info">
+                            <h4>помещение 16/67</h4>
+                            <div class="found-cnt-btn G-align-center G-justify-between">
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/icon-floor.svg" alt="icon-floor">
+                                    <span>Этаж: 21</span>
+                                </div>
+                                <div class="found-cnt-href G-center">
+                                    <img src="./assets/img/ruler.svg" alt="ruler">
+                                    <span>Площадь: 211 м²</span>
+                                </div>
+                            </div>
+                            <div class="found-cnt-item G-align-center G-justify-between">
+                                <div class="found-cnt-price G-flex-column G-align-start">
+                                    <div class="G-align-center">
+                                        <del>300 000 000</del>
+                                        <span class="found-cnt-skid">-30%</span>
+                                    </div>
+
+                                    <span>211 000 000 ₽</span>
+                                </div>
+                                <span class="arrow-top-rig">
+                                   <i class="icon-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -2273,24 +2661,11 @@
         </div>
 
         <div class="floor-room  G-justify-between ">
-            <div class="floor-room-cnt" style="background-image: url('./assets/img/mod-AFI-Tag.png')">
-                <div class="floor-lot-card floor-room-fon">
-                    <div class="floor-room-price G-align-center G-justify-between">
-                        <div class="G-align-end">
-                            <div class="found-cnt-price G-flex-column G-align-start">
-                                <del>300 000 000</del>
-                                <span>211 000 000 ₽</span>
-                            </div>
-                            <span class="found-cnt-skid">-30%</span>
-                        </div>
-                    </div>
-                    <div class="floor-room-flex G-align-center G-justify-between">
+            <div class="technical-spec" >
+                <h2>Помещение 123</h2>
+                <div class="tech-floor-info G-align-end G-justify-between">
                         <div class="floor-room-number G-flex-column">
-                            <span>№43 </span>
-                            <small>Помещение</small>
-                        </div>
-                        <div class="floor-room-number G-flex-column">
-                            <span>10/21</span>
+                            <span>22</span>
                             <small>Этаж</small>
                         </div>
                         <div class="floor-room-number G-flex-column">
@@ -2298,11 +2673,40 @@
                             <small>Площадь</small>
                         </div>
                         <div class="floor-room-number G-flex-column">
-                            <del>200 000</del>
-                            <span>144 888₽</span>
-                            <small>Цена за м² </small>
+                            <span>3 кв. 2026</span>
+                            <small>Сдача</small>
+                        </div>
+                        <div class="floor-room-number G-flex-column">
+                            <small>400 000 руб</small>
+                            <span>234 567 руб</span>
+                            <small>стоимость за м2</small>
                         </div>
                     </div>
+                <h3>Технические характеристики</h3>
+                <div class="technical-spec-col G-flex-column">
+                        <div class="technical-spec-row">
+                            <span>Мокрая точка</span>
+                            <span>Да</span>
+                        </div>
+                        <div class="technical-spec-row">
+                            <span>Технолог. вытяжка</span>
+                            <span>6 м³/час на 1 м2</span>
+                        </div>
+                        <div class="technical-spec-row">
+                            <span>Электрическая мощность, кВт</span>
+                            <span>0,2 кВт/м2</span>
+                        </div>
+                        <div class="technical-spec-row">
+                            <span>Высота потолков</span>
+                            <span>200 кг/м2</span>
+                        </div>
+                    </div>
+                <div class="floor-price-discount G-align-start G-flex-column">
+                    <div class="G-align-center ">
+                        <del>300 000 000</del>
+                        <span class="found-cnt-skid">-30%</span>
+                    </div>
+                    <strong>211 000 000 ₽</strong>
                 </div>
             </div>
             <div class="parameters-floor">
@@ -2334,6 +2738,11 @@
                             <small>Площадь</small>
                         </div>
                         <div class="floor-room-number G-flex-column">
+                            <span>IVкв. 2026</span>
+                            <small>Сдача</small>
+                        </div>
+
+                        <div class="floor-room-number G-flex-column">
                             <span>144 123</span>
                             <small>Цена за м² </small>
                         </div>
@@ -2355,51 +2764,97 @@
                 </div>
             </div>
         </div>
-        <div class="technical-spec">
-            <h3>Технические характеристики</h3>
 
+        <div class="income-asset-main">
+            <div class="global-title">
+                <h2>Расчет дохода с актива*</h2>
+            </div>
 
-            <div class="technical-spec-col G-flex-column">
-                <div class="technical-spec-row">
-                    <span>Мокрая точка</span>
-                    <span>Нет</span>
+            <div class="income-asset-flex G-justify-between">
+                <div class="income-asset-title">
+                    <h3>Это инструмент для быстрой оценки прибыльности инвестиций в коммерческие объекты. Он рассчитывает ключевые показатели</h3>
+
                 </div>
-
-                <div class="technical-spec-row">
-                    <span>Технолог. вытяжка</span>
-                    <span>60 м³/час</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Электрическая мощность, кВт</span>
-                    <span>8</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Вывеска</span>
-                    <span>Нет</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Нагрузка на пол, кг/м²</span>
-                    <span>400</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Кондиционирование</span>
-                    <span>Центральное</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Шаг колонн</span>
-                    <span>8.4×8.4</span>
-                </div>
-
-                <div class="technical-spec-row">
-                    <span>Высота потолков</span>
-                    <span>3 м</span>
+                <div class="income-asset-info G-flex-column">
+                    <div class="income-asset-price">
+                        <p>Средняя ставка аренды на момент сдачи  без учета НДС)</p>
+                        <span>34 000 м2/год</span>
+                    </div>
+                    <div class="income-asset-price">
+                        <p>Стоимость актива на дату ввода</p>
+                        <span>34 000 678 руб.</span>
+                    </div>
+                    <div class="income-asset-price">
+                        <p>Зачет НДС (22%)</p>
+                        <span>3 000 678 руб.</span>
+                    </div>
                 </div>
             </div>
+
+            <div class="timeline-wrapper stable-space-flex G-flex">
+                <div class="stable-space-cont">
+                    <div class="stable-space-bet G-justify-between">
+                        <div class="stable-space-number js-top-item ">
+                            <strong>5,7 лет</strong>
+                            <p>Срок окупаемости актива при сдаче с последующей продажей
+                            </p>
+                        </div>
+                        <div class="stable-space-number js-top-item">
+                            <strong>16,8 лет</strong>
+                            <p>Срок увеличения стоимости актива в два раза</p>
+                        </div>
+                        <div class="stable-space-number js-top-item">
+                            <strong>7 лет</strong>
+                            <p>Срок окупаемости при сдаче в аренду**</p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+
+                        <div class="timeline-ticks timeline2-ticks"></div>
+                        <div class="timeline-track timeline2-track">
+                            <div class="timeline-progress timeline2-progress"></div>
+                            <div class="timeline-thumb timeline2-thumb">
+                                <div class="tooltip timeline2-tooltip">2 год</div>
+                            </div>
+                        </div>
+                        <div class="timeline-labels timeline2-labels"></div>
+
+                        <div class="timeline-track-mobile">
+                            <ul>
+                                <li data-year="2028">3 года</li>
+                                <li data-year="2030">5 лет</li>
+                                <li data-year="2032">7 лет</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profit-sale">
+                    <div class="profit-sale-info">
+                        <p>Прибыль от продажи объекта</p>
+                        <div class="profit-sale-price">
+                            <span>3 456 567₽</span>
+                            <span>20%</span>
+                        </div>
+                    </div>
+                    <div class="profit-sale-info">
+                        <p>Прибыль от сдачи в аренду</p>
+                        <div class="profit-sale-price">
+                            <span>0 ₽</span>
+                            <span>0%</span>
+                        </div>
+                    </div>
+                    <div class="profit-sale-info">
+                        <p>Прибыль от продажи и сдачи в аренду</p>
+                        <div class="profit-sale-price">
+                            <span>34 556 556₽</span>
+                            <span>20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <small>*Расчёт возможного дохода от продажи помещения или сдачи в аренду является ориентировочным. Реальный доход будет зависеть от состояния помещения, рыночной ситуации и иных факторов, действующих на момент продажи или сдачи в аренду помещения. При расчете возможного арендного дохода не учтены налоги и сборы, иные затраты, договорные условия по индексации арендной платы. Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ.
+                **с учётом 6 месяцев на подготовку и сдачу объекта в аренду</small>
         </div>
 
     </div>
@@ -2408,13 +2863,13 @@
 
 
 
-<div id="modal-form" class="modal-overlay">
-
-    <div class="touchstart modal-form-main">
-        <div class="modal-close"></div>
+<div id="modal1" class="mfp-hide modal">
+    <div class="modal-form-main">
+        <button title="Close (Esc)" type="button" class="mfp-close">×</button>
         <div class="modal-drag-zone">
             <span class="close-filt-map"></span>
         </div>
+
         <h3>Оставьте заявку</h3>
         <p>Мы поможем определиться с выбором направления по реализации задачи</p>
         <div class="validate-form">
@@ -2470,10 +2925,9 @@
     </div>
 </div>
 
-<div id="modal-thanks" class="modal-overlay">
 
-    <div class="touchstart modal-form-main">
-        <div class="modal-close"></div>
+<div id="modal-thanks" class="mfp-hide modal">
+    <div class="modal-form-main">
         <div class="modal-drag-zone">
             <span class="close-filt-map"></span>
         </div>
@@ -2482,12 +2936,10 @@
             <p>Ваша заявка успешно принята, наши менеджеры скоро свяжутся с Вами</p>
         </div>
     </div>
-
 </div>
 
-<div id="modal-news" class="modal-overlay">
-    <div class="touchstart all-news-modal ">
-        <div class="modal-close"></div>
+<div id="modal-news" class="mfp-hide modal">
+    <div class="all-news-modal ">
         <div class="modal-drag-zone">
             <span class="close-filt-map"></span>
         </div>
@@ -2506,6 +2958,8 @@
 
 
 <script src="assets/js/jquery-3.6.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
 <script src="assets/js/jquery.fancybox.js"></script>
 <script src="assets/js/jquery.formstyler.min.js"></script>
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>

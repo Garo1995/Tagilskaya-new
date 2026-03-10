@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
             clearInterval(timerInterval);
             return;
         }
-
         const days = Math.floor(t / (1000 * 60 * 60 * 24));
         const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));

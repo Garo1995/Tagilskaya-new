@@ -11,8 +11,6 @@ document.querySelectorAll('.validate-form').forEach(form => {
             if (phone.value.trim().length < 6) isValid = false;
         });
 
-
-
         // Чекбоксы
         form.querySelectorAll('.required-check').forEach(ch => {
             if (!ch.checked) isValid = false;

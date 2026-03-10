@@ -85,7 +85,7 @@ let advantagesSwiper = new Swiper(".advantages-slider", {
             loop: true,
         },
         '320': {
-            slidesPerView: 2,
+            slidesPerView: 1.1,
             slidesPerGroup: 1,
             loop: true,
         },
@@ -334,10 +334,6 @@ const mainSlider = new Swiper(".new-gallery-slider", {
         prevEl: ".gallery-button-prev",
     },
 });
-
-
-
-
 
 
 

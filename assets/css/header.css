@@ -225,9 +225,7 @@ header{
     }
 }
 @media (max-width: 767px){
-    .logo {
-        width: 99px;
-    }
+
 }
 @media (max-width: 570px){
     .head-menu {

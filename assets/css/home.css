@@ -490,6 +490,9 @@ p{
     padding: 40px;
     width: 100%;
 }
+.location-mobile{
+    display: none;
+}
 
 .location-fon{
     background: rgba(0, 0, 0, 0.3);
@@ -554,7 +557,9 @@ p{
 .peaceful-flex{
     gap: 16px;
 }
-
+.peaceful-photo-mob{
+    display: none;
+}
 .peaceful-photo{
     max-width: 443px;
     width: 100%;
@@ -952,8 +957,9 @@ p{
     width: 100%;
     border-radius: 60px;
     position: relative;
-    margin-top: -178px;
+    margin-top: -100px;
 }
+
 .floor-main-photo{
     display: flex;
     position: relative;
@@ -1175,7 +1181,7 @@ p{
 
 
 
-.projects-completed{
+.gallery-completed{
     margin-top: 50px;
 }
 
@@ -1310,7 +1316,6 @@ p{
     gap: 16px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 .developer-ren-name img{
     width: 98px;
@@ -1318,7 +1323,14 @@ p{
 .developer-ren-name h3{
     color: rgba(255, 255, 255, 1);
 }
+.developer-ren-name .arrow-top-rig{
+    background: rgba(244, 244, 244, 1);
 
+}
+.developer-ren-name .arrow-top-rig .icon-right{
+    filter: unset;
+
+}
 .developer-ren-wrap{
     max-width: 656px;
     width: 100%;
@@ -1347,6 +1359,8 @@ p{
     font-weight: 400;
     font-size: 24px;
     line-height: 125%;
+    max-width: 238px;
+    width: 100%;
 }
 
 
@@ -2031,19 +2045,28 @@ footer{
 .floor-room-boxis{
     padding-bottom: 32px;
 }
-
-
-
-
-
-.technical-spec{
-    background: rgba(0, 0, 0, 0.2);
-    max-width: 670px;
-    width: 100%;
-    border-radius: 40px;
-    padding: 32px;
+.tech-floor-info{
+    margin: 32px 0;
+    padding-bottom: 32px;
+    position: relative;
 }
-.technical-spec  h3{
+.tech-floor-info:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.0225) 13.6%, rgba(255, 255, 255, 0.15) 100%);
+    transform: rotate(180deg);
+}
+.technical-spec{
+    max-width: 600px;
+    width: 100%;
+}
+
+
+.technical-spec h3{
     color: rgba(255, 255, 255, 1);
     font-weight: 400;
     font-size: 32px;
@@ -2380,6 +2403,45 @@ footer{
     display: block;
     margin-top: 6px;
 }
+
+.floor-price-discount{
+    position: relative;
+    margin-top: 32px;
+    padding-top: 32px;
+}
+.floor-price-discount:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.0225) 13.6%, rgba(255, 255, 255, 0.15) 100%);
+    transform: rotate(180deg);
+}
+.floor-price-discount del{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 114%;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+}
+.floor-price-discount .found-cnt-skid{
+    margin: 0 0 0 6px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+.floor-price-discount strong{
+    margin-top: 16px;
+    display: block;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    color: #FFFFFF;
+}
 .offices-benefits .found-cnt-skid {
     font-size: 13px;
     line-height: 100%;
@@ -2429,39 +2491,6 @@ footer{
 }
 
 
-
-.real-estate-filter ul{
-    display: flex;
-    border: 1px solid #FFFFFF1A;
-    backdrop-filter: blur(20px);
-    background: #FFFFFF1A;
-    width: 112px;
-    gap: 4px;
-    border-radius: 48px;
-    padding: 2px;
-
-}
-
-.real-estate-filter ul li{
-    background: #FFFFFF;
-    border-radius: 50%;
-    transition: 0.3s;
-    max-width: 52px;
-    width: 100%;
-    height: 52px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.real-estate-filter ul li.params-active{
-    background: #BF9076;
-
-}
-.real-estate-filter ul li.params-active i{
-
-    filter: brightness(0) invert(1);
-}
 
 .estate-view {
     display: none;
@@ -2600,7 +2629,6 @@ footer{
     position:absolute;
     height:100%;
     background: rgba(191, 144, 118, 1);
-
     width:0;
 }
 
@@ -2651,20 +2679,30 @@ footer{
     height: 10px;
     transform: translateX(-50%) rotate(45deg);
 }
-.timeline-ticks{
-    position:relative;
-    height: 10px;
+.timeline-ticks {
+    position: relative;
+    height: 15px;
+    align-items: flex-end;
+    display: flex;
 }
-
 .tick{
     position:absolute;
     width:4px;
-    height:10px;
-    background:rgba(255, 255, 255, 0.1);
+    height:5px;
+    background:rgba(255, 255, 255, 0.15);
     transform:translateX(-50%);
+    transition:0.25s;
+
 }
 
+.tick.big{
+    height:15px;
+}
 
+/* активные */
+.tick.active{
+    background:#d7a07a;
+}
 
 /* подписи */
 .timeline-labels {
@@ -2691,7 +2729,7 @@ footer{
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(196, 157, 118, 1);
 }
 
 .timeline-thumb{
@@ -2759,21 +2797,7 @@ footer{
 
 
 
-.tick{
-    position:absolute;
-    width:4px;
-    height:10px;
-    background:rgba(255, 255, 255, 0.1);
-    transform:translateX(-50%);
-    transition:0.25s;
-}
 
-
-
-/* активные */
-.tick.active{
-    background:#d7a07a;
-}
 
 
 
@@ -2811,6 +2835,7 @@ footer{
     border-radius: 40px;
     gap: 48px;
     position: relative;
+    overflow: hidden;
 }
 .supermarket-box:after{
     content: "";
@@ -2893,49 +2918,53 @@ footer{
 
 
 
-.select-premises .real-estate-filter{
+.real-estate-filter{
     background: rgba(191, 144, 118, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
-    max-width: 529px;
-    width: 100%;
     height: 48px;
     gap: 4px;
     border-radius: 48px;
     padding: 4px;
+
+    transition: 0.3s;
+
     z-index: 11;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
 }
 
-.select-premises .real-estate-filter ul li{
+.real-estate-filter ul li{
     border-radius: 48px;
     color: rgba(255, 255, 255, 1);
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    max-width: 100%;
-    height: 100%;
     background: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 24px;
+    white-space: nowrap;
 }
 
-.select-premises .real-estate-filter ul {
-    border: unset;
-    backdrop-filter: unset;
-    background: unset;
-    border-radius: 0;
-    padding: 0;
+.real-estate-filter ul {
     width: 100%;
     height: 100%;
+    display: flex;
+
 }
-.select-premises .real-estate-filter ul li.params-active {
+
+.real-estate-filter ul li.params-active {
     background: rgba(255, 255, 255, 1);
     color: rgba(63, 71, 82, 1);
 }
 
 
-.select-premises .floor-main {
-    margin-top: -100px;
-}
 
 .select-premises .found-cnt-flex {
     gap: 32px 16px;
@@ -2993,12 +3022,12 @@ footer{
 .floor-room-cnt{
     max-width: 670px;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 40px;
     display: flex;
     align-items: flex-end;
     height: 615px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .floor-room-fon{
     backdrop-filter: blur(10px);
@@ -3104,6 +3133,7 @@ footer{
 .select-layout-svg{
     display: flex;
     width: 100%;
+    cursor: pointer;
 }
 .select-layout-svg svg{
     width: 100%;
@@ -3113,6 +3143,39 @@ footer{
 .select-layout-svg img{
     width: 100%;
     height: 368px;
+}
+.parameters-floor-zoom{
+    position: absolute;
+    background: rgba(191, 144, 118, 1);
+    width: 52px;
+    height: 52px;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    opacity: 0;
+}
+.parameters-floor-zoom:before{
+    content: "";
+    position: absolute;
+    background: rgba(191, 144, 118, 0.3);
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+}
+.icon-search{
+    position: relative;
+    z-index: 1;
+    content: url("../img/search-room.svg");
+}
+.select-layout-svg:hover .parameters-floor-zoom{
+    opacity: 1;
 }
 .select-layout-number{
     width: 48px;
@@ -3202,8 +3265,22 @@ footer{
 .offices-benefits-slider .found-cnt-box{
     width: 100%;
 }
-
-
+.offices-benef-title{
+    gap: 16px;
+}
+.discounts-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(196, 157, 118, 1);
+    border-radius: 500px;
+    padding: 15px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    white-space: nowrap;
+}
 
 
 .advantages-card-name{
@@ -3277,6 +3354,7 @@ footer{
     width: 100%;
     border-radius: 40px;
     padding: 37px 83px;
+    height: 540px;
 }
 .parameters-flex{
     margin-top: 24px;
@@ -3428,16 +3506,12 @@ footer{
     .footer-menu ul li a {
         padding: 0 12px 14px;
     }
-    .select-premises .floor-main {
-        margin-top: -70px;
-    }
-    .select-premises .real-estate-filter ul li {
+
+     .real-estate-filter ul li {
         font-size: 16px;
         line-height: 20px;
     }
-    .select-premises .real-estate-filter {
-        max-width: 485px;
-    }
+
     .floor-plan-fiv {
         gap: 15px;
     }
@@ -3772,7 +3846,10 @@ footer{
 
 
 
-
+    .parameters-floor-photo {
+        padding: 30px 40px;
+        height: 458px;
+    }
 
 
 
@@ -3926,7 +4003,12 @@ footer{
     .location-fon {
         border-radius: 0 0 24px 24px;
     }
-
+    .floor-room-number span {
+        font-size: 22px;
+    }
+    .floor-price-discount .found-cnt-skid {
+        font-size: 20px;
+    }
     .location-business {
         border-radius: 24px;
         padding-bottom: 50px;
@@ -4047,7 +4129,7 @@ footer{
         padding: 30px 34px;
     }
     .parameters-flex {
-        padding: 30px 20px;
+        padding: 20px 20px;
         gap: 14px;
     }
     .download-pdf {
@@ -4055,9 +4137,7 @@ footer{
         padding: 10px 24px;
         font-size: 16px;
     }
-    .floor-room-cnt {
-        height: 543px;
-    }
+
     .real-estate-filter{
         display: none;
     }
@@ -4085,7 +4165,7 @@ footer{
     }
    .business-info h1 {
         font-size: 36px;
-        line-height: 43px;
+        line-height: 38px;
         max-width: 375px;
     }
     .presentation-dow {
@@ -4118,7 +4198,10 @@ footer{
         font-size: 32px;
         line-height: 40px;
     }
-
+    .all-news-modal {
+        padding: 60px 30px 20px;
+        border-radius: 29px;
+    }
 }
 @media (max-width: 1020px) {
     .business-flex {
@@ -4149,6 +4232,24 @@ footer{
         line-height: 28px;
         text-align: center;
     }
+
+    .modal-drag-zone{
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        width: 100%;
+        touch-action: none;
+        padding-top: 6px;
+    }
+    .close-filt-map{
+        display: block;
+        background: #00000026;
+        width: 28px;
+        height: 3px;
+        border-radius: 10px;
+    }
+
+
     .timer-title p{
         text-align: center;
     }
@@ -4312,9 +4413,7 @@ footer{
         padding: 24px;
         border-radius: 24px;
     }
-    .floor-room-boxis .floor-room-cnt{
-        display: none;
-    }
+
     .floor-room-price .parameters-loc{
         display: flex;
         width: 45px;
@@ -4345,8 +4444,30 @@ footer{
         right: auto;
         left: 0;
     }
-
-
+    .tech-floor-info{
+        display: none;
+    }
+    .technical-spec{
+        margin-top: 20px;
+    }
+    .technical-spec h2{
+        display: none;
+    }
+    .floor-price-discount{
+        display: none;
+    }
+    .technical-spec {
+        margin-top: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+        padding: 24px 16px;
+        max-width: 100%;
+    }
+    .parameters-floor-photo {
+        padding: 33px 25px;
+        min-height: 290px;
+        height: auto;
+    }
     .timer-shares .timer-wrapper {
         margin-top: 0;
     }
@@ -4439,7 +4560,7 @@ footer{
     }
 
     .developer-ren-cnt {
-        max-width: 680px;
+        max-width: 780px;
         border-radius: 24px;
     }
     .floor-main-photo{
@@ -4610,9 +4731,14 @@ footer{
     .sort-floor-abs.sort-floor-abs-act {
         transform: translateY(0%);
     }
-
+    h2 {
+        text-transform: uppercase;
+    }
     .found-cnt-box {
         width: calc(50% - 12px);
+    }
+    .floor-room-boxis .income-asset-main {
+        margin-top: 0;
     }
     .bread-caps-head{
         display: none;
@@ -4642,7 +4768,12 @@ footer{
         width: 100%;
         border-radius: unset;
     }
-
+    .floor-room-boxis .floor-room-number span {
+        font-size: 16px;
+    }
+    .floor-room-number small {
+        font-size: 13px;
+    }
     .body-fon{
         overflow: hidden;
     }
@@ -4710,16 +4841,21 @@ footer{
     }
     .business-info h1 {
         font-size: 32px;
-        line-height: 36px;
+        line-height: 32px;
         max-width: 345px;
     }
 
 
+    .business-cnt {
+        min-height: 411px;
+    }
 
 
 
-
-
+    .select-premises .floor-plan-fiv {
+        gap: 16px;
+        flex-direction: row-reverse;
+    }
 
 
 }
@@ -4738,10 +4874,16 @@ footer{
         gap: 8px;
     }
 
+
     .filter-block {
         max-width: 100%;
     }
-
+    .location-desctop{
+        display: none;
+    }
+    .location-mobile{
+        display: block;
+    }
     .found-cnt-box {
         width: 100%;
         max-width: 560px;
@@ -4790,6 +4932,119 @@ footer{
         border-radius: 24px;
         padding: 24px 24px 24px;
     }
+
+    .time-box span {
+        font-size: 18px;
+    }
+    .location-business {
+        padding-bottom: 0;
+        flex-direction: column;
+        margin-top: 16px;
+
+    }
+
+    .location-rel {
+        position: relative;
+        padding: 0 16px 24px;
+        margin-top: -60px;
+    }
+    .rental-income-items {
+        flex-direction: column;
+    }
+    .rental-income-item{
+        width: 100%;
+    }
+    .rental-income-item:nth-child(1) {
+        order: 2;
+    }
+    .rental-income-item:nth-child(3) {
+        order: 3;
+    }
+    .rental-income-item:nth-child(4) {
+        order: 4;
+    }
+    .peaceful-photo-desc{
+        display: none;
+    }
+    .near-house-name h3 br{
+        display: none;
+    }
+    .near-house-name h3 {
+        text-transform: uppercase;
+        line-height: 24px;
+    }
+    .peaceful-name h3 {
+        font-size: 18px;
+        text-transform: uppercase;
+        line-height: 126%;
+    }
+    .peaceful-photo-mob{
+        display: block;
+    }
+    .rental-income-info h3 {
+        text-transform: unset;
+        max-width: 457px;
+    }
+    .rental-income-info h3 br{
+        display: none;
+    }
+    .rental-income-li {
+        width: 100%;
+        order: 1;
+    }
+    .location-fon {
+        padding: 0;
+        gap: 24px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        background: unset;
+        margin-bottom: 24px;
+    }
+    .rental-income-li ul li {
+        padding: 9px 23px;
+        font-size: 16px;
+        text-align: left;
+        width: max-content;
+    }
+    .btn-tax-office {
+        bottom: 0;
+        right: 0;
+        position: relative;
+        width: 100%;
+    }
+    .location-name p br{
+        display: none;
+    }
+
+    .location-name p {
+        font-size: 18px;
+        max-width: 190px;
+        width: 100%;
+        line-height: 22px;
+    }
+    .location-name {
+        width: 100%;
+    }
+    .payback-details p {
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    .income-asset-main>small {
+        font-size: 15px;
+        line-height: 115%;
+        margin-top: 16px;
+    }
+    .supermarket-info {
+        padding: 32px 16px 0;
+    }
+    .select-premises .found-cnt-flex {
+        gap: 16px 16px;
+        margin-top: 16px;
+    }
+
+
 }
 @media (max-width: 570px){
 
@@ -4822,9 +5077,8 @@ footer{
         gap: 9px;
     }
 
-
     .timeline-track-mobile ul li {
-        padding: 12px 20px;
+        padding: 9px 15px;
     }
     .timeline-track {
         width: 101.2%;
@@ -4833,16 +5087,29 @@ footer{
     .income-asset-info {
         padding-left: 0;
     }
-    .income-asset-price p, .income-asset-price span {
-        font-size: 19px;
+
+    .income-asset-price p{
+        max-width: 180px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .income-asset-price span {
+        font-size: 16px;
     }
     .global-title p {
         max-width: 300px;
     }
+    .income-asset-price {
+        padding: 12px 0;
+    }
     .companies-card p {
         margin-top: 8px;
     }
-
+    .income-asset-main>small {
+        font-size: 13px;
+        line-height: 115%;
+        margin-top: 16px;
+    }
     .all-news-modal {
         padding: 0 20px 20px;
     }
@@ -4893,15 +5160,14 @@ footer{
     .all-news-col{
         max-height: 380px;
     }
-    .technical-spec {
-        padding: 32px 24px;
-    }
+
     .technical-spec h3 {
-        font-size: 23px;
-        line-height: 26px;
+        font-size: 20px;
+        line-height: 22px;
     }
     .technical-spec-row span {
-        line-height: 26px;
+        line-height: 22px;
+        font-size: 16px;
     }
     .technical-spec-row span:first-child {
         font-size: 16px;
@@ -4914,8 +5180,13 @@ footer{
         gap: 26px;
     }
 
-
-
+    h2 {
+        text-transform: uppercase;
+    }
+    .supermarket-text p {
+        font-size: 18px;
+        line-height: 20px;
+    }
     .payback-period-title small {
         font-size: 16px;
         line-height: 20px;
@@ -4927,13 +5198,16 @@ footer{
         padding: 32px 16px;
         max-width: 100%;
     }
+    .supermarket-text span {
+        font-size: 18px;
+    }
     .payback-details p {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 13px;
+        line-height: 17px;
     }
     .payback-details span {
-        font-size: 18px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 14px;
     }
     .payback-period-col {
         gap: 19px;
@@ -4945,16 +5219,120 @@ footer{
         height: auto;
         padding: 24px;
         width: 100%;
-        gap: 24px;
+        gap: 16px;
+        border-radius: 24px;
     }
-    .developer-boxes h4 {
-        font-size: 24px;
-    }
+
     .developer-boxes p {
-        font-size: 18px;
+        font-size: 16px;
+    }
+    .projects-completed {
+        margin-top: 4px;
+    }
+    .business-info {
+        padding: 0;
+    }
+    .presentation-btn .btn-arrow{
+        max-width: 390px;
+    }
+    .presentation-btn .presentation-dow{
+        max-width: 390px;
+    }
+    .time-box span {
+        font-size: 16px;
     }
 
 
+
+    .time-box {
+        width: 70px;
+    }
+
+    .near-house-name h3 {
+        font-size: 16px;
+    }
+    .timer-wrapper {
+        padding: 24px 21px;
+    }
+    .colon {
+        margin-top: -3px;
+    }
+    .timer {
+        gap: 9px;
+    }
+    .block-shares-box h3 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .income-asset-title h3 {
+        font-size: 20px;
+    }
+    .block-shares-box {
+        min-height: 141px;
+        padding: 28px 39px 24px 24px;
+        border-radius: 24px;
+    }
+    .discounts-up {
+        padding: 12px 15px;
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .gallery-completed{
+        margin-top: 32px;
+    }
+
+    .projects-complete-name h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .projects-complete-name p {
+        font-size: 16px;
+    }
+    .sales-office-name span {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .sales-office-name span br{
+        display: none;
+    }
+
+    .sales-office-policy a {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .sales-office-name p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .sales-office-name a {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    footer {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    .parameters-floor-mobile {
+        padding: 24px 14px;
+    }
+
+    .rental-income-li ul li {
+        padding: 8px 17px;
+        font-size: 14px;
+    }
+    .rental-income-info h3 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .rental-income-info h3 br{
+        display: inline-block;
+    }
+    .floor-room-boxis .floor-room-number span {
+        font-size: 14px;
+    }
+    .technical-spec-row span:first-child {
+        font-size: 13px;
+    }
 }
 @media (max-width: 420px){
     .icon-botas {
@@ -4986,7 +5364,14 @@ footer{
     h2 {
         font-size: 22px;
     }
-
+    .business-info h1 {
+        font-size: 29px;
+        line-height: 30px;
+        max-width: 311px;
+    }
+    .business-info h6 {
+        font-size: 20px;
+    }
     .title-line {
         margin-top: 10px;
     }
@@ -4997,9 +5382,25 @@ footer{
         padding: 28px 19px;
     }
 
-
+    .developer-boxes h4 {
+        font-size: 24px;
+    }
     .footer-box {
         padding: 30px;
     }
+    .location-icon {
+        padding: 8px 14px;
+    }
 
+    .location-name span {
+        font-size: 14px;
+    }
+    .location-name p {
+        font-size: 16px;
+        max-width: 168px;
+        line-height: 20px;
+    }
+    .location-fon {
+        gap: 16px;
+    }
 }
