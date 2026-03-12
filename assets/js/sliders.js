@@ -243,7 +243,27 @@ let countSwiper = new Swiper(".floor-count-slider", {
 
 
 
+document.querySelectorAll(".gallery-slider").forEach((slider) => {
+    const parent = slider.closest(".modal-gallery");
 
+    const nextBtn = parent.querySelector(".gallery-button-next");
+    const prevBtn = parent.querySelector(".gallery-button-prev");
+    const pagination = parent.querySelector(".gallery-pagination");
+
+    new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        speed: 600,
+        navigation: {
+            nextEl: nextBtn,
+            prevEl: prevBtn,
+        },
+        pagination: {
+            el: pagination,
+            type: "fraction",
+        },
+    });
+});
 
 
 
@@ -372,3 +392,14 @@ let officesSwiper = new Swiper(".offices-benefits-slider", {
         },
     },
 });
+
+
+
+
+
+
+
+
+
+
+

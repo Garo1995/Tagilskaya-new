@@ -97,10 +97,16 @@ p{
 
 /*===========--icons--==============*/
 
+.body-fixed{
+    overflow: hidden;
+}
 
-
-
-
+body{
+    overflow: hidden;
+}
+.home-main-active{
+    overflow: unset;
+}
 
 
 
@@ -112,7 +118,7 @@ p{
     top: 0;
     height: 100vh;
     z-index: 999999;
-    transition: 1.8s;
+    transition: 1.1s;
     background: #333C46;
     padding: 0 15px;
 }
@@ -120,18 +126,85 @@ p{
     opacity: 0;
     transition: 0.8s;
     visibility: hidden;
+}
 
-}
-.tagilskaya-logo{
-    height: 100%;
-}
+
 .tagilskaya-logo img{
-    transition: 1.3s;
+    transition: 0.8s;
     opacity: 0;
 }
 .tagilskaya-act .tagilskaya-logo img{
     opacity: 1;
 }
+
+
+
+
+.tagilskaya-cnt{
+    height: 100vh;
+}
+
+.tagilskaya-logo{
+    gap: 20px;
+}
+.tagilskaya-logo span{
+    display: flex;
+    opacity: 0.1;
+}
+.tagilskaya-logo span:nth-child(5){
+    margin-left: 10px;
+}
+
+.tagilskaya-act span{
+    opacity: 1;
+    transition: 1.1s;
+
+}
+.tagilskaya-act .icon-one svg path{
+    fill: #C49D76;
+}
+
+.tagilskaya-act .icon-two svg path{
+    transition: 1.1s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-three svg path{
+    transition: 1.4s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-four svg path{
+    transition: 1.8s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-five svg path{
+    transition: 2.2s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-six svg path{
+    transition: 2.4s;
+    fill: #ffffff;
+
+}
+
+.tagilskaya-name{
+    margin-top: 40px;
+    margin-left: 400px;
+    transition: 1.2s;
+    opacity: 0;
+    transform: translateY(300px);
+
+}
+.tagilskaya-act .tagilskaya-name{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+
 
 
 
@@ -513,6 +586,7 @@ p{
     max-width: 675px;
     width: 100%;
     padding: 56px 48px;
+    transition: 0.3s;
 }
 .comme-estate-name{
     gap: 16px;
@@ -555,9 +629,13 @@ p{
 .comme-estate-text .icon-top-right {
     filter: brightness(0.5);
 }
+.comme-estate-text .arrow-top-right:hover {
+    background: rgba(244, 244, 244, 1);
+}
 
-
-
+.comme-estate-info:hover .arrow-top-right {
+    transform: scale(1.1) rotate(-45deg);
+}
 
 
 
@@ -738,13 +816,13 @@ p{
     transform: rotate(-45deg);
     transition: 0.3s;
 }
-.arrow-top-right:hover{
+/*.arrow-top-right:hover{
     background: rgba(191, 144, 118, 1);
 
 }
 .arrow-top-right:hover i {
     filter: brightness(0) saturate(100%) invert(1);
-}
+}*/
 .quiet-out{
     gap: 24px;
 }
@@ -1400,11 +1478,13 @@ p{
 .developer-ren-name .arrow-top-rig{
     background: rgba(244, 244, 244, 1);
 }
-.developer-ren-name .arrow-top-rig:hover{
-    background: rgba(191, 144, 118, 1);
+
+.developer-ren-name:hover .arrow-top-rig{
+    transform: scale(1.1) rotate(-45deg);
 }
+
 .developer-ren-name .arrow-top-rig .icon-right{
-    filter: invert(1);
+    filter: brightness(0.5);
 }
 .developer-ren-wrap{
     max-width: 656px;
@@ -1653,6 +1733,101 @@ p{
     border-top: 2px solid rgba(255, 255, 255, 0.4);
     border-right: 2px solid rgba(255, 255, 255, 0.4);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-gallery {
+    max-width: 75%;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 60px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery-slider{
+    border-radius: 24px;
+    width: 100%;
+}
+.gallery-photo{
+    width: 100%;
+}
+.gallery-photo img{
+    width: 100%;
+    border-radius: 24px;
+}
+
+.gallery-arrow{
+    margin-top: 20px;
+    position: relative;
+}
+.gallery-arrow .swiper-pagination{
+    position: relative;
+    bottom: 0;
+    width: 114px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+.gallery-arrow .swiper-button-prev, .gallery-arrow .swiper-button-next {
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: unset;
+    background: #FFFFFF33;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+}
+.gallery-arrow .swiper-button-prev:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: rotate(-135deg);
+    left: 20px;
+    border-top: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+.gallery-arrow .swiper-button-next:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    right: 19px;
+    border-top: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+.gallery-arrow .swiper-button-prev:hover, .gallery-arrow .swiper-button-next:hover{
+    background: #C49D76;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2426,33 +2601,59 @@ footer{
     width: calc(25% - 12px);
     transition: 0.3s;
     cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
-}
-.found-cnt-box:hover{
     background: rgba(255, 255, 255, 1);
 
 }
-.found-cnt-box:hover .found-cnt-info h4 {
-    color: rgba(63, 71, 82, 1);
+.found-cnt-box:hover{
+    background: unset;
 }
-.found-cnt-box:hover  .found-cnt-href {
+.found-cnt-info{
+    margin-top: -18px;
+    padding: 40px 16px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 24px 24px;
+}
+ .found-cnt-info h4 {
+    color: rgba(63, 71, 82, 1);
+     font-weight: 400;
+     font-size: 18px;
+     line-height: 28px;
+     text-transform: uppercase;
+     transition: 0.3s;
+
+ }
+ .found-cnt-href {
     border: 2px solid rgba(0, 0, 0, 0.15);
+     width: max-content;
+     border-radius: 500px;
+     padding: 8px 16px;
+     gap: 5px;
+     transition: 0.3s;
 }
-.found-cnt-box:hover .found-cnt-href span {
+.found-cnt-href span {
     color: rgba(63, 71, 82, 1);
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 105%;
+    transition: 0.3s;
 }
 
-.found-cnt-box:hover .found-cnt-price del {
+ .found-cnt-price del {
     color: rgba(0, 0, 0, 0.5);
+     font-weight: 400;
+     font-size: 18px;
+     line-height: 105%;
+     display: block;
+     transition: 0.3s;
 }
 
-.found-cnt-box:hover .found-cnt-price>span {
-    color: rgba(63, 71, 82, 1);
 
-}
-.found-cnt-box:hover .found-cnt-href img {
+.found-cnt-href img {
     filter: brightness(0.5);
+    width: 24px;
+    transition: 0.3s;
 }
 
 
@@ -2462,70 +2663,47 @@ footer{
 .found-cnt-photo{
     width: 100%;
     background: #F4F4F4;
-    border-radius: 24px;
+    border-radius: 20px 20px 24px 24px;
     height: 260px;
 }
-.found-cnt-info{
-    padding: 24px 16px 16px;
-}
-.found-cnt-info h4{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    transition: 0.3s;
 
+.found-cnt-box:hover .found-cnt-info h4{
+    color: #FFFFFF;
 }
 .found-cnt-btn{
     margin-top: 16px;
     gap: 4px;
 }
-.found-cnt-href{
-    width: max-content;
-    border-radius: 500px;
-    padding: 8px 16px;
-    gap: 5px;
+.found-cnt-box:hover .found-cnt-href{
     border: 2px solid rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
-
 }
-.found-cnt-href img{
-    width: 24px;
-    transition: 0.3s;
-
+.found-cnt-box:hover .found-cnt-href img{
+    filter: unset;
 }
-.found-cnt-href span {
-    white-space: nowrap;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 105%;
-    transition: 0.3s;
+.found-cnt-box:hover .found-cnt-href span {
     color: #FFFFFF;
 }
 .found-cnt-item{
     margin-top: 24px;
 }
-.found-cnt-price del{
+.found-cnt-box:hover .found-cnt-price del{
     color: #FFFFFF80;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 105%;
-    display: block;
-    transition: 0.3s;
 
 }
+.found-cnt-price>span {
+    color: rgba(63, 71, 82, 1);
+}
 .found-cnt-price span{
-    color: #ffffff;
     font-weight: 400;
     font-size: 24px;
     line-height: 105%;
     display: block;
     margin-top: 6px;
     transition: 0.3s;
-
 }
-
+.found-cnt-box:hover .found-cnt-price>span{
+    color: #ffffff;
+}
 .floor-price-discount{
     position: relative;
     margin-top: 32px;
@@ -2603,15 +2781,19 @@ footer{
     transition: 0.3s;
 
 }
-
-.found-cnt-box:hover .arrow-top-rig i{
+.found-cnt-box .arrow-top-rig i{
     filter: brightness(0) saturate(100%) invert(1);
 }
-
-.found-cnt-box:hover .arrow-top-rig{
-    background: #BF9076;
+.found-cnt-box:hover .arrow-top-rig i{
+    filter: contrast(0.1);
 }
 
+.found-cnt-box .arrow-top-rig{
+    background: #BF9076;
+}
+.found-cnt-box:hover .arrow-top-rig{
+    background: #FFFFFF1A;
+}
 
 
 .estate-view {
@@ -3167,6 +3349,19 @@ footer{
 }
 .floor-room-fon:hover .arrow-top-rig{
     background: #C49D76;
+}
+.floor-room-fon .found-cnt-price del {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+
+}
+.floor-room-fon .found-cnt-price>span {
+    color: rgba(255, 255, 255, 1);
+    font-size: 34px;
+
+}
+.popup-gallery{
+    height: 100%;
 }
 
 .floor-room-flex{
@@ -3851,7 +4046,13 @@ footer{
         padding: 0 5px 14px;
         font-size: 14px;
     }
+    .floor-room-fon .found-cnt-price>span {
+        font-size: 24px;
+    }
 
+    .floor-room-fon .found-cnt-price del {
+        font-size: 18px;
+    }
 }
 @media (max-width: 1299px){
     .companies-card {
@@ -3981,8 +4182,6 @@ footer{
 
 
 
-
-
 }
 @media (max-width: 1199px){
     .comme-estate-photo img {
@@ -4037,6 +4236,7 @@ footer{
     .time-box {
         width: 80px;
     }
+
     .infrast-map-cnt ul {
         gap: 12px;
     }
@@ -4519,7 +4719,9 @@ footer{
         font-size: 18px;
         line-height: 100%;
     }
-
+    .popup-gallery .mfp-close {
+        display: flex;
+    }
     .found-cnt-scroll {
         height: calc(100vh - 205px);
         padding-bottom: 60px;
@@ -4543,6 +4745,9 @@ footer{
     }
     .layouts-line{
         display: none;
+    }
+    .body-sort-fixed{
+        overflow: hidden;
     }
     .close-all-filter{
         width: 24px;
@@ -4978,9 +5183,7 @@ footer{
         gap: 16px;
         flex-direction: row-reverse;
     }
-    .body-fixed{
-        overflow: hidden!important;
-    }
+
     .business-place {
         bottom: 15px;
         right: 15px;
@@ -5071,7 +5274,18 @@ footer{
         margin-top: 16px;
 
     }
-
+    .gallery-arrow .swiper-button-prev, .gallery-arrow .swiper-button-next {
+        width: 32px;
+        height: 32px;
+    }
+    .gallery-arrow .swiper-button-next:before {
+        width: 8px;
+        height: 8px;
+    }
+    .gallery-arrow .swiper-button-prev:before {
+        width: 8px;
+        height: 8px;
+    }
     .location-rel {
         position: relative;
         padding: 0 16px 24px;
@@ -5242,7 +5456,15 @@ footer{
     .all-news-modal {
         padding: 0 20px 20px;
     }
-
+    .gallery-arrow .swiper-button-prev, .gallery-arrow .swiper-button-next{
+        display: none;
+    }
+    .gallery-photo {
+        height: 379px;
+    }
+    .gallery-photo img {
+        object-fit: cover;
+    }
     .floor-box {
         max-width: calc(100% - 32px);
         bottom: 16px;
@@ -5466,6 +5688,10 @@ footer{
         bottom: 12px;
         right: 12px;
         width: 84px;
+    }
+
+    .gallery-slider{
+        border-radius: 18px;
     }
 }
 @media (max-width: 420px){

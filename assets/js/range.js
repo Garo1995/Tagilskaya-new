@@ -86,10 +86,17 @@ document.querySelectorAll(".filter-box").forEach(box => {
 $('.sort-floor').on('click', function (e) {
     e.stopPropagation();
     $('.sort-floor-abs').toggleClass('sort-floor-abs-act');
-    $('body').addClass('body-fixed');
+    $('body').addClass('body-sort-fixed');
 
 })
+$(window).on('click', function (e) {
+    let floorSort = $('.sort-floor-abs');
+    if (e.target !== floorSort) {
+        floorSort.removeClass('sort-floor-abs-act');
+    }
 
+
+});
 
 
 $('.sort-floor-abs').on('touchstart', function (e) {
@@ -103,7 +110,7 @@ $('.sort-floor-abs').on('touchmove', function (e) {
 $('.sort-floor-abs').on('touchend', function () {
     if (endY - startY > threshold) {
         $(this).removeClass('sort-floor-abs-act');
-        $('body').removeClass('body-fixed');
+        $('body').removeClass('body-sort-fixed');
 
     }
 });
