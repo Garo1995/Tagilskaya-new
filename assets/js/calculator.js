@@ -4,11 +4,11 @@ const states = [
     { year: 2029, label: "3 года", sale:"1 200 000 ₽", rent:"0 ₽", total:"1 200 000 ₽", percent:"12%" },
     { year: 2031, label: "5 лет",  sale:"3 456 567 ₽", rent:"300 000 ₽", total:"3 756 567 ₽", percent:"20%" },
     { year: 2033, label: "7 лет",  sale:"5 200 000 ₽", rent:"900 000 ₽", total:"6 100 000 ₽", percent:"28%" },
-    { year: 2036, label: "", sale:"8 900 000 ₽", rent:"2 200 000 ₽", total:"11 100 000 ₽", percent:"41%" },
+    { year: 2036, label: "10 лет", sale:"8 900 000 ₽", rent:"2 200 000 ₽", total:"11 100 000 ₽", percent:"41%" },
 ];
 
 const labelsData = {
-    2026:"",
+    2026:"РВЭ",
     2029:"3 года",
     2031:"5 лет",
     2033:"7 лет",

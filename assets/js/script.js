@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function () {
         const currentScroll = window.pageYOffset;
 
-        if (currentScroll > lastScroll && currentScroll > 100) {
+        if (currentScroll > 100) {
             // скроллим ВНИЗ — прячем
             header.classList.add("hide");
         } else {
