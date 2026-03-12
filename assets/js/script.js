@@ -93,6 +93,21 @@ $('.menu-scroll a').click(function() {
 /*===========--header-style-end===========*/
 
 
+const cards = document.querySelectorAll('.companies-card-hover');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        cards.forEach(c => c.classList.remove('card-orange'));
+    });
+});
+const locationName = document.querySelectorAll('.location-name');
+
+locationName.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        locationName.forEach(c => c.classList.remove('location-acts'));
+    });
+});
+
 
 
 $('.see-more-news').on('click', function () {

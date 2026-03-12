@@ -22,6 +22,9 @@ function initTimeline(container){
     const end = states[states.length-1].year;
     const totalYears = end - start;
 
+    const MIN_POS = 6;   // минимальный отступ слева (%)
+    const MAX_POS = 100; // максимум справа
+
     const track = container.querySelector(".timeline-track");
     const thumb = container.querySelector(".timeline-thumb");
     const progress = container.querySelector(".timeline-progress");
@@ -36,7 +39,8 @@ function initTimeline(container){
 
     /* ================== СОЗДАНИЕ ТИКОВ И ПОДПИСЕЙ ================== */
     for(let year=start; year<=end; year++){
-        const percent = (year - start)/totalYears*100;
+
+        const percent = MIN_POS + ((year - start) / totalYears) * (MAX_POS - MIN_POS);
 
         const tick = document.createElement("div");
         tick.className = "tick";
@@ -54,12 +58,18 @@ function initTimeline(container){
         }
     }
 
-    /* ================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ================== */
+    /* ================== ПОЛУЧЕНИЕ БЛИЖАЙШЕГО ГОДА ================== */
     function getNearestYear(percent){
-        const year = Math.floor(start + percent * totalYears);
+
+        percent = Math.max(MIN_POS / 100, Math.min(percent, MAX_POS / 100));
+
+        const normalized = (percent - MIN_POS / 100) / ((MAX_POS - MIN_POS) / 100);
+        const year = Math.round(start + normalized * totalYears);
+
         return Math.min(Math.max(year, start), end);
     }
 
+    /* ================== ИНТЕРПОЛЯЦИЯ ================== */
     function getInterpolatedState(year){
 
         if(year <= states[0].year) return states[0];
@@ -93,9 +103,11 @@ function initTimeline(container){
         };
     }
 
+    /* ================== ОБНОВЛЕНИЕ ================== */
     function update(){
+
         const state = getInterpolatedState(current);
-        const percent = (current - start)/totalYears*100;
+        const percent = MIN_POS + ((current - start) / totalYears) * (MAX_POS - MIN_POS);
 
         thumb.style.left = percent + "%";
         progress.style.width = percent + "%";
@@ -116,7 +128,6 @@ function initTimeline(container){
             blocks[2].children[1].innerText = state.percent;
         }
 
-        // Верхние блоки
         let activeIndex = -1;
         if(current >= 2029 && current < 2031) activeIndex = 0;
         else if(current >= 2031 && current < 2033) activeIndex = 1;
@@ -126,7 +137,6 @@ function initTimeline(container){
             el.classList.toggle("active", i === activeIndex);
         });
 
-        // Мобильная версия
         mobileItems.forEach(item => {
             const itemYear = Number(item.dataset.year);
             item.classList.toggle("active", current === itemYear);
@@ -135,7 +145,7 @@ function initTimeline(container){
 
     update();
 
-    /* ================== КЛИК ПО ТРЕКУ ================== */
+    /* ================== КЛИК ПО ЛИНИИ ================== */
     track.addEventListener("click",(e)=>{
         const rect = track.getBoundingClientRect();
         const percent = (e.clientX - rect.left)/rect.width;
@@ -143,7 +153,7 @@ function initTimeline(container){
         update();
     });
 
-    /* ================== ДРАГ ================== */
+    /* ================== DRAG ================== */
     let isDragging = false;
 
     function startDrag(e){
@@ -159,10 +169,13 @@ function initTimeline(container){
 
     function moveAt(e){
         if(!isDragging) return;
+
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const rect = track.getBoundingClientRect();
         let x = clientX - rect.left;
+
         x = Math.max(0, Math.min(x, rect.width));
+
         const percent = x / rect.width;
         current = getNearestYear(percent);
         update();
@@ -185,7 +198,7 @@ function initTimeline(container){
     });
 }
 
-/* ================== ИНИЦИАЛИЗАЦИЯ ВСЕХ ТАЙМЛАЙНОВ НА СТРАНИЦЕ ================== */
+/* ================== ИНИЦИАЛИЗАЦИЯ ================== */
 document.querySelectorAll(".timeline-wrapper").forEach(wrapper => {
     initTimeline(wrapper);
 });

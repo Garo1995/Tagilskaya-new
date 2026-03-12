@@ -17,7 +17,7 @@ header{
     padding: 24px 48px;
     background: rgba(244, 244, 244, 1);
     border-radius: 40px 40px;
-    transition: 0.7s;
+    transition: 0.4s;
     margin-left: auto;
     width: 100%;
 }
@@ -30,6 +30,9 @@ header.hide .header-main{
 }
 .logo{
     width: 255px;
+}
+.logo img{
+    width: 100%;
 }
 header.hide .logo {
     width: 195px;

@@ -250,7 +250,7 @@ document.querySelectorAll(".gallery-slider").forEach((slider) => {
     const prevBtn = parent.querySelector(".gallery-button-prev");
     const pagination = parent.querySelector(".gallery-pagination");
 
-    new Swiper(slider, {
+    const swiper = new Swiper(slider, {
         slidesPerView: 1,
         spaceBetween: 10,
         speed: 600,
@@ -262,6 +262,23 @@ document.querySelectorAll(".gallery-slider").forEach((slider) => {
             el: pagination,
             type: "fraction",
         },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (!parent.classList.contains("active")) return;
+        // если у тебя класс открытия другой, замени active на свой
+
+        if (e.key === "ArrowRight") {
+            swiper.slideNext();
+        }
+
+        if (e.key === "ArrowLeft") {
+            swiper.slidePrev();
+        }
     });
 });
 

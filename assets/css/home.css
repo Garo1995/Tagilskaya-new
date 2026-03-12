@@ -573,7 +573,12 @@ body{
     background: rgba(196, 157, 118, 1);
     border-radius: 40px;
     width: 100%;
+    transition: 0.3s;
 }
+.comme-estate-flex:hover .arrow-top-right {
+    transform: scale(1.10) rotate(-45deg);
+}
+
 .comme-estate-photo{
     max-width: 774px;
     width: 100%;
@@ -609,6 +614,12 @@ body{
     font-size: 56px;
     line-height: 100%;
     margin-top: 56px;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+    width: max-content;
+}
+.comme-estate-flex:hover .comme-estate-info h3{
+    border-bottom: 1px solid #fff;
 }
 .comme-estate-info h6{
     font-weight: 400;
@@ -633,9 +644,6 @@ body{
     background: rgba(244, 244, 244, 1);
 }
 
-.comme-estate-info:hover .arrow-top-right {
-    transform: scale(1.1) rotate(-45deg);
-}
 
 
 
@@ -685,6 +693,9 @@ body{
     background: rgba(196, 157, 118, 1);
 
 }
+.fancybox-image, .fancybox-spaceball {
+    border-radius: 20px;
+}
 .location-icon i{
     width: 24px;
 }
@@ -728,7 +739,17 @@ body{
     width: 100%;
     position: relative;
 }
+.peaceful-photo:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background: linear-gradient(180.11deg, rgba(0, 0, 0, 0) 0.09%, #000000 131.86%);
 
+}
 .peaceful-photo img{
     width: 100%;
     border-radius: 40px;
@@ -789,7 +810,16 @@ body{
     border-radius: 40px;
     transition: 0.3s;
 }
-
+.near-house-photo:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 156.84%);
+    border-radius: 40px;
+}
 .near-house-photo img{
     width: 100%;
     border-radius: 40px;
@@ -893,13 +923,31 @@ body{
 .card-orange{
     background: rgba(191, 144, 118, 1);
 }
-
 .card-orange h2{
+    color: rgba(255, 255, 255, 1);
+}
+.card-orange h3{
     color: rgba(255, 255, 255, 1);
 }
 .card-orange P{
     color: rgba(255, 255, 255, 1);
 }
+.companies-card-hover:hover{
+    background: rgba(191, 144, 118, 1);
+}
+.companies-card-hover:hover h2{
+    color: rgba(255, 255, 255, 1);
+
+}
+.companies-card-hover:hover h3{
+    color: rgba(255, 255, 255, 1);
+
+}
+.companies-card-hover:hover p{
+    color: rgba(255, 255, 255, 1);
+
+}
+
 
 
 .companies-card:nth-child(3),
@@ -1479,7 +1527,7 @@ body{
     background: rgba(244, 244, 244, 1);
 }
 
-.developer-ren-name:hover .arrow-top-rig{
+.developer-ren-cnt:hover .arrow-top-rig{
     transform: scale(1.1) rotate(-45deg);
 }
 
@@ -1876,6 +1924,8 @@ body{
 }
 .news-box p{
     color: rgba(255, 255, 255, 0.5);
+    height: 88px;
+    overflow: hidden;
 }
 
 
@@ -2597,6 +2647,61 @@ footer{
     gap: 45px 16px;
 
 }
+.found-cnt-flex .found-cnt-box{
+    background: unset;
+}
+.found-cnt-flex .found-cnt-box:hover{
+    background: rgba(255, 255, 255, 1);
+}
+
+
+
+.found-cnt-flex .found-cnt-box .found-cnt-info h4{
+    color: #FFFFFF;
+}
+.found-cnt-flex .found-cnt-box .found-cnt-href{
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.found-cnt-flex .found-cnt-box .found-cnt-href img{
+    filter: unset;
+}
+.found-cnt-flex .found-cnt-box .found-cnt-href span {
+    color: #FFFFFF;
+}
+.found-cnt-flex .found-cnt-box .found-cnt-price del{
+    color: #FFFFFF80;
+}
+.found-cnt-flex .found-cnt-box .found-cnt-price>span{
+    color: #ffffff;
+}
+
+
+.found-cnt-flex .found-cnt-box:hover .found-cnt-info h4{
+    color: rgba(63, 71, 82, 1);
+
+}
+.found-cnt-flex .found-cnt-box:hover .found-cnt-href{
+    border: 2px solid rgba(0, 0, 0, 0.15);
+
+}
+.found-cnt-flex .found-cnt-box:hover .found-cnt-href img{
+    filter: brightness(0.5);
+
+}
+.found-cnt-flex .found-cnt-box:hover .found-cnt-href span {
+    color: rgba(63, 71, 82, 1);
+
+}
+.found-cnt-flex .found-cnt-box:hover .found-cnt-price del{
+    color: rgba(0, 0, 0, 0.5);
+
+}
+.found-cnt-flex .found-cnt-box:hover .found-cnt-price>span{
+    color: rgba(63, 71, 82, 1);
+
+}
+
+
 .found-cnt-box{
     width: calc(25% - 12px);
     transition: 0.3s;
@@ -2688,11 +2793,12 @@ footer{
 }
 .found-cnt-box:hover .found-cnt-price del{
     color: #FFFFFF80;
-
 }
 .found-cnt-price>span {
     color: rgba(63, 71, 82, 1);
 }
+
+
 .found-cnt-price span{
     font-weight: 400;
     font-size: 24px;
@@ -2704,6 +2810,21 @@ footer{
 .found-cnt-box:hover .found-cnt-price>span{
     color: #ffffff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .floor-price-discount{
     position: relative;
     margin-top: 32px;
@@ -2784,15 +2905,13 @@ footer{
 .found-cnt-box .arrow-top-rig i{
     filter: brightness(0) saturate(100%) invert(1);
 }
-.found-cnt-box:hover .arrow-top-rig i{
-    filter: contrast(0.1);
-}
+
 
 .found-cnt-box .arrow-top-rig{
     background: #BF9076;
 }
 .found-cnt-box:hover .arrow-top-rig{
-    background: #FFFFFF1A;
+    transform: scale(1.10) rotate(-45deg);
 }
 
 
@@ -2899,7 +3018,7 @@ footer{
 }
 .stable-space-number strong{
     padding: 16px 0;
-    color: rgba(191, 144, 118, 1);
+    color: rgba(196, 157, 118, 1);
     font-weight: 400;
     font-size: 24px;
     line-height: 100%;
@@ -2932,8 +3051,9 @@ footer{
 .timeline-progress{
     position:absolute;
     height:100%;
-    background: rgba(191, 144, 118, 1);
     width:0;
+    background: rgba(196, 157, 118, 1);
+
 }
 
 /* бегунок */
@@ -2954,7 +3074,8 @@ footer{
 .timeline-thumb:before{
     content:"";
     position: absolute;
-    background: rgba(191, 144, 118, 1);
+    background: rgba(196, 157, 118, 1);
+
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -2989,6 +3110,17 @@ footer{
     align-items: flex-end;
     display: flex;
 }
+.timeline-ticks:before{
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 4px;
+    height: 15px;
+    background: rgba(196, 157, 118, 1);
+
+
+}
 .tick{
     position:absolute;
     width:4px;
@@ -3005,7 +3137,8 @@ footer{
 
 /* активные */
 .tick.active{
-    background:#d7a07a;
+    background: rgba(196, 157, 118, 1);
+
 }
 
 /* подписи */
@@ -3034,6 +3167,7 @@ footer{
     font-size: 18px;
     line-height: 127%;
     color: rgba(196, 157, 118, 1);
+
 }
 
 .timeline-thumb{
@@ -3070,7 +3204,7 @@ footer{
     margin-top: 24px;
 }
 .profit-sale-price span:first-child{
-    color: rgba(191, 144, 118, 1);
+    color: rgba(196, 157, 118, 1);
 }
 .profit-sale-price span{
     font-weight: 400;
@@ -4411,6 +4545,9 @@ footer{
     .developer-renowned {
         margin-top: 30px;
     }
+    .peaceful-photo:before {
+        border-radius: 24px;
+    }
     .developer-ren-name {
         padding: 28px 28px 35px 28px;
     }
@@ -4536,7 +4673,9 @@ footer{
     .rental-income-info {
         max-width: 1000px;
     }
-
+    .near-house-photo:before {
+        border-radius: 24px;
+    }
     .payback-period {
         padding: 32px 24px;
         max-width: 100%;
@@ -5537,7 +5676,7 @@ footer{
         max-width: 100%;
     }
     .all-news-col{
-        max-height: 380px;
+        max-height: 400px;
     }
 
     .technical-spec h3 {
@@ -5736,6 +5875,9 @@ footer{
     }
     .gallery-slider{
         border-radius: 18px;
+    }
+    .news-box p{
+        height: 80px;
     }
 }
 @media (max-width: 420px){
