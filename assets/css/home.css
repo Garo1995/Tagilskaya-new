@@ -3717,6 +3717,23 @@ footer{
     border: 2px solid rgba(191, 144, 118, 1);
 }
 
+
+@media (max-width: 1600px){
+
+    .tagilskaya-logo span {
+        height: 120px;
+    }
+
+    .tagilskaya-logo span svg {
+        height: 100%;
+    }
+
+    .tagilskaya-name img {
+        max-width: 480px;
+    }
+}
+
+
 @media (max-width: 1399px){
     .business-center {
         margin-top: 120px;
@@ -4075,7 +4092,18 @@ footer{
         max-width: 360px;
         height: 99%;
     }
+    .tagilskaya-logo span {
+        height: 76px;
+    }
 
+    .tagilskaya-name {
+        margin-top: 26px;
+        margin-left: 197px;
+    }
+
+    .tagilskaya-name img {
+        max-width: 380px;
+    }
     .payback-period {
         padding: 32px 16px;
         border-radius: 24px;
@@ -5690,6 +5718,22 @@ footer{
         width: 84px;
     }
 
+    .tagilskaya-logo span {
+        height: 56px;
+    }
+
+    .tagilskaya-logo {
+        gap: 11px;
+    }
+
+    .tagilskaya-name {
+        margin-top: 17px;
+        margin-left: 70px;
+    }
+
+    .tagilskaya-name img {
+        max-width: 240px;
+    }
     .gallery-slider{
         border-radius: 18px;
     }
@@ -5762,5 +5806,8 @@ footer{
     }
     .location-fon {
         gap: 16px;
+    }
+    .tagilskaya-name img {
+        max-width: 220px;
     }
 }
