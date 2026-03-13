@@ -85,7 +85,7 @@ let advantagesSwiper = new Swiper(".advantages-slider", {
             loop: true,
         },
         '320': {
-            slidesPerView: 1.1,
+            slidesPerView: 1.2,
             slidesPerGroup: 1,
             loop: true,
         },
@@ -343,7 +343,7 @@ let swiper2 = new Swiper(".select-layout-slider", {
 
 
 
-const thumbs = new Swiper(".thumbs-slider", {
+const thumbsGallery = new Swiper(".thumbs-slider", {
     direction: "vertical",
     spaceBetween: 16,
     slidesPerView: 3,
@@ -353,6 +353,10 @@ const thumbs = new Swiper(".thumbs-slider", {
         nextEl: ".gallery-button-next",
         prevEl: ".gallery-button-prev",
     },
+    pagination: {
+        el: ".gallery-pagination",
+        clickable: true,
+    },
 });
 
 const mainSlider = new Swiper(".new-gallery-slider", {
@@ -360,10 +364,10 @@ const mainSlider = new Swiper(".new-gallery-slider", {
     speed: 600,
     loop: true,
     thumbs: {
-        swiper: thumbs,
+        swiper: thumbsGallery,
     },
     pagination: {
-        el: ".gallery-pagination",
+        el: ".swiper-pagination",
         clickable: true,
     },
     navigation: {

@@ -249,7 +249,6 @@ $(document).ready(function () {
 
 /*===========-modal-start-============*/
 
-
 let startY = 0;
 let moveY = 0;
 const threshold = 120;
@@ -265,9 +264,9 @@ $('.open-modal').magnificPopup({
 
     callbacks: {
         open: function () {
-            const modalBox = $('.mfp-content .mfp-hide');
+            const modalBox = this.content; // вот это главное исправление
 
-            modalBox.off('touchstart.modalSwipe touchmove.modalSwipe touchend.modalSwipe');
+            modalBox.off('.modalSwipe');
 
             modalBox.on('touchstart.modalSwipe', function (e) {
                 if ($(e.target).closest('.modal-close-btn, a, button, input, textarea, select, label').length) {
@@ -282,7 +281,7 @@ $('.open-modal').magnificPopup({
                 modalBox.css('transition', 'none');
             });
 
-          /*  modalBox.on('touchmove.modalSwipe', function (e) {
+            modalBox.on('touchmove.modalSwipe', function (e) {
                 if (!isDragging) return;
 
                 moveY = e.originalEvent.touches[0].clientY - startY;
@@ -290,7 +289,7 @@ $('.open-modal').magnificPopup({
                 if (moveY > 0) {
                     modalBox.css('transform', `translateY(${moveY}px)`);
                 }
-            });*/
+            });
 
             modalBox.on('touchend.modalSwipe', function () {
                 if (!isDragging) return;
@@ -323,16 +322,16 @@ $('.open-modal').magnificPopup({
         close: function () {
             $(document).off('click.modalClose', '.modal-close-btn');
 
-            $('.mfp-content .mfp-hide').css({
-                transform: '',
-                transition: ''
-            });
+            if (this.content) {
+                this.content.off('.modalSwipe');
+                this.content.css({
+                    transform: '',
+                    transition: ''
+                });
+            }
         }
     }
 });
-
-
-
 
 
 

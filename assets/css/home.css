@@ -98,7 +98,7 @@ p{
 /*===========--icons--==============*/
 
 .body-fixed{
-    overflow: hidden;
+    overflow: hidden!important;
 }
 
 body{
@@ -840,7 +840,9 @@ body{
 .near-house-photo .peaceful-name{
     padding: 0 48px 48px;
 }
-
+.near-house-mobile{
+    display: none;
+}
 
 
 
@@ -1399,13 +1401,13 @@ body{
 
 .gallery-box-flex{
     display: flex;
-    gap: 28px;
+    gap: 16px;
     margin-top: 32px;
 }
 
 
 .gallery-box-rel{
-    max-width: 932px;
+    max-width: 944px;
     width: 100%;
 }
 .new-gallery-slider{
@@ -1630,7 +1632,7 @@ body .popup-gallery .mfp-close {
 }
 .projects-complete-info{
     width: 100%;
-    padding: 32px 24px;
+    padding: 32px 24px 42px;
     gap: 8px;
     display: flex;
     align-items: flex-start;
@@ -2976,8 +2978,7 @@ footer{
 
 .income-asset-title h3{
     font-weight: 400;
-    font-size: 32px;
-    line-height: 120%;
+    line-height: 105%;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -3331,7 +3332,7 @@ footer{
     padding-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 9px;
 }
 .supermarket-text p{
     font-weight: 400;
@@ -4084,7 +4085,6 @@ footer{
     }
     .supermarket-text {
         padding-bottom: 16px;
-        gap: 12px;
     }
     .supermarket-count {
         padding: 13px 16px;
@@ -5060,6 +5060,10 @@ footer{
     }
     .gallery-box-rel {
         max-width: 100%;
+    }
+    .new-gallery-slider {
+        width: 100%;
+        border-radius: 24px;
         padding-bottom: 24px;
     }
     .new-gallery-slider {
@@ -5212,6 +5216,7 @@ footer{
     }
     .footer-menu{
         overflow-x: scroll;
+        overflow-y: hidden;
     }
     .footer-menu::-webkit-scrollbar {
         width: 0;
@@ -5223,6 +5228,7 @@ footer{
     }
     .footer-menu ul {
         gap: 16px;
+        margin-bottom: 0;
     }
     .footer-menu ul li a {
         padding: 0 15px 16px;
@@ -5788,8 +5794,15 @@ footer{
     .business-info {
         padding: 0;
     }
-    .presentation-btn .btn-arrow{
+    .presentation-btn .btn-arrow {
         max-width: 390px;
+        text-align: center;
+
+    }
+    .btn-arrow-name{
+        width: 100%;
+        text-align: center;
+        padding-left: 5px;
     }
     .presentation-btn .presentation-dow{
         max-width: 390px;
@@ -5877,12 +5890,11 @@ footer{
         font-size: 14px;
     }
     .rental-income-info h3 {
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 32px;
+        line-height: 31px;
+        letter-spacing: normal;
     }
-    .rental-income-info h3 br{
-        display: inline-block;
-    }
+
     .floor-room-boxis .floor-room-number span {
         font-size: 14px;
     }
@@ -5916,6 +5928,137 @@ footer{
     }
     .news-box p{
         height: 80px;
+    }
+    .rental-income-item p {
+        color: #fff;
+    }
+    .rental-income-item p br {
+        display: none;
+    }
+    .payback-period:before {
+        top: -590px;
+        left: -50%;
+        width: 866px;
+        opacity: 0.3;
+        height: 866px;
+    }
+
+    .payback-period:after {
+        top: 193px;
+        left: -50%;
+        opacity: 0.3;
+        width: 866px;
+        height: 866px;
+    }
+    .payback-details p {
+        max-width: 189px;
+    }
+    .found-cnt-box:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+    .found-cnt-box:hover .found-cnt-info h4 {
+        color: rgba(63, 71, 82, 1);
+    }
+    .found-cnt-box:hover .found-cnt-href {
+        border: 2px solid rgba(0, 0, 0, 0.15);
+    }
+    .found-cnt-box:hover .found-cnt-href img {
+        filter: brightness(0.5);
+    }
+
+    .found-cnt-box:hover .found-cnt-href span {
+        color: rgba(63, 71, 82, 1);
+    }
+    .found-cnt-box:hover .found-cnt-price del {
+        color: rgba(0, 0, 0, 0.5);
+
+    }
+    .found-cnt-box:hover .found-cnt-price>span {
+        color: rgba(63, 71, 82, 1);
+    }
+
+    .found-cnt-href{
+        min-width: 129px;
+    }
+    .found-cnt-href:nth-child(2){
+        width: 100%;
+    }
+
+    .parameters-floor-mobile .found-cnt-price del {
+        color: rgba(255, 255, 255, 0.5);
+
+    }
+    .parameters-floor-mobile .found-cnt-price>span {
+        color: rgba(255, 255, 255, 1);
+    }
+    .found-cnt-flex .found-cnt-box:hover {
+        background: unset;
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-info h4 {
+        color: #FFFFFF;
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-href {
+        border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-href img {
+        filter: unset;
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-href span {
+        color: #FFFFFF;
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-price del {
+        color: #FFFFFF80;
+    }
+    .found-cnt-flex .found-cnt-box:hover .found-cnt-price>span {
+        color: rgba(255, 255, 255, 1);
+
+    }
+    .construct-card {
+        height: 494px;
+    }
+    .advantages-card-name h4 {
+        font-size: 24px;
+        line-height: 105%;
+    }
+    .advantages-card-name h4 br{
+        display: block;
+    }
+    .gallery-box-floor-zoom {
+        opacity: 1;
+    }
+    .gallery-box-flex {
+        flex-direction: column;
+    }
+    .gallery-completed {
+        margin-top: 10px;
+    }
+    .peaceful-mob-tit h2{
+        max-width: 360px;
+        width: 100%;
+    }
+    .companies-card h3 {
+        font-size: 32px;
+    }
+    .companies-card:nth-child(1) h2 {
+        font-size: 32px;
+    }
+    .near-house-desct{
+        display: none;
+    }
+    .near-house-mobile{
+        display: block;
+    }
+    .income-asset-main {
+        margin-top: 23px;
+    }
+    .construct-plus {
+        opacity: 1;
+    }
+    .construct-plus {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
     }
 }
 @media (max-width: 420px){
@@ -5986,6 +6129,10 @@ footer{
     }
     .location-fon {
         gap: 16px;
+    }
+    .rental-income-info h3 {
+        font-size: 28px;
+        line-height: 28px;
     }
     .tagilskaya-name img {
         max-width: 220px;
