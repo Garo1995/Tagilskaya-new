@@ -46,7 +46,8 @@ function initTimeline(container) {
     const mobileItems = container.querySelectorAll(".timeline-track-mobile li");
 
     // СТАРТ НЕ С 2026, А СО ВТОРОЙ РИСКИ = 2027
-    let current = start + 1;
+    const MIN_YEAR = start + 1; // 2027
+    let current = MIN_YEAR;
 
     /* ================== СОЗДАНИЕ ТИКОВ И ПОДПИСЕЙ ================== */
     for (let year = start; year <= end; year++) {
@@ -75,18 +76,17 @@ function initTimeline(container) {
         const normalized = (percent - MIN_POS / 100) / ((MAX_POS - MIN_POS) / 100);
         const year = Math.round(start + normalized * totalYears);
 
-        return Math.min(Math.max(year, start), end);
+        return Math.min(Math.max(year, MIN_YEAR), end);
     }
 
     /* ================== ИНТЕРПОЛЯЦИЯ ================== */
     function getInterpolatedState(year) {
-        if (year <= states[0].year) {
+        if(year <= states[0].year) {
             return {
                 ...states[0],
                 label: "0 лет"
             };
         }
-
         if (year >= states[states.length - 1].year) {
             return {
                 ...states[states.length - 1],

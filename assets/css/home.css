@@ -1452,7 +1452,7 @@ body .popup-gallery .mfp-close {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.3s;
+    transition: 0.5s;
     opacity: 0;
 }
 .gallery-box-floor-zoom:before{
@@ -5376,7 +5376,12 @@ footer{
     .business-cnt {
         min-height: 411px;
     }
-
+    .all-news-modal .modal-close-btn{
+        display: none;
+    }
+    .modal-form-main .modal-close-btn{
+        display: none;
+    }
 
 
     .select-premises .floor-plan-fiv {

@@ -282,7 +282,7 @@ $('.open-modal').magnificPopup({
                 modalBox.css('transition', 'none');
             });
 
-            modalBox.on('touchmove.modalSwipe', function (e) {
+          /*  modalBox.on('touchmove.modalSwipe', function (e) {
                 if (!isDragging) return;
 
                 moveY = e.originalEvent.touches[0].clientY - startY;
@@ -290,7 +290,7 @@ $('.open-modal').magnificPopup({
                 if (moveY > 0) {
                     modalBox.css('transform', `translateY(${moveY}px)`);
                 }
-            });
+            });*/
 
             modalBox.on('touchend.modalSwipe', function () {
                 if (!isDragging) return;
