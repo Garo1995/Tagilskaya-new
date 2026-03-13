@@ -253,6 +253,7 @@ let startY = 0;
 let moveY = 0;
 const threshold = 120;
 let isDragging = false;
+let scrollTop = 0;
 
 $('.open-modal').magnificPopup({
     type: 'inline',
@@ -264,7 +265,15 @@ $('.open-modal').magnificPopup({
 
     callbacks: {
         open: function () {
-            const modalBox = this.content; // вот это главное исправление
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            $('body').css({
+
+                width: '100%',
+                overflow: 'hidden'
+            });
+
+            const modalBox = this.content;
 
             modalBox.off('.modalSwipe');
 
@@ -322,6 +331,14 @@ $('.open-modal').magnificPopup({
         close: function () {
             $(document).off('click.modalClose', '.modal-close-btn');
 
+            $('body').css({
+
+                width: '',
+                overflow: ''
+            });
+
+            window.scrollTo(0, scrollTop);
+
             if (this.content) {
                 this.content.off('.modalSwipe');
                 this.content.css({
@@ -332,6 +349,7 @@ $('.open-modal').magnificPopup({
         }
     }
 });
+
 
 
 

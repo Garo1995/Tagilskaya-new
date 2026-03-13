@@ -3863,7 +3863,10 @@ footer{
     border: 2px solid rgba(191, 144, 118, 1);
 }
 
-
+body.modal-open {
+    width: 100%;
+    overflow: hidden;
+}
 @media (max-width: 1600px){
 
     .tagilskaya-logo span {
@@ -6060,6 +6063,7 @@ footer{
         bottom: 20px;
         right: 20px;
     }
+
 }
 @media (max-width: 420px){
     .icon-botas {
