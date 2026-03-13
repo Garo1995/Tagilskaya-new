@@ -5220,6 +5220,8 @@ body.modal-open {
     .footer-menu{
         overflow-x: scroll;
         overflow-y: hidden;
+
+        padding-bottom: 10px;
     }
     .footer-menu::-webkit-scrollbar {
         width: 0;
@@ -5231,7 +5233,7 @@ body.modal-open {
     }
     .footer-menu ul {
         gap: 16px;
-        margin-bottom: 0;
+        margin-bottom: -10px;
     }
     .footer-menu ul li a {
         padding: 0 15px 16px;
@@ -5723,7 +5725,7 @@ body.modal-open {
         max-width: 100%;
     }
     .all-news-col{
-        max-height: 400px;
+        max-height: 420px;
     }
 
     .technical-spec h3 {

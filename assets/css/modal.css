@@ -514,9 +514,3 @@ body .mfp-close {
         display: none;
     }
 }
-@media (max-height: 750px){
-    .modal-form-main {
-        overflow-y: scroll;
-        height: 400px;
-    }
-}
