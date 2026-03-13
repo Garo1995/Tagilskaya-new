@@ -252,61 +252,84 @@ $(document).ready(function () {
 
 let startY = 0;
 let moveY = 0;
-let threshold = 120;
+const threshold = 120;
+let isDragging = false;
 
 $('.open-modal').magnificPopup({
     type: 'inline',
     removalDelay: 300,
     midClick: true,
-
     mainClass: 'my-mfp-slide-bottom',
-    fixedContentPos: true, // фиксирует контент и убирает скролл страницы
+    fixedContentPos: true,
+    closeBtnInside: false,
 
     callbacks: {
         open: function () {
+            const modalBox = $('.mfp-content .mfp-hide');
 
-            const modal = $('.mfp-content');
+            modalBox.off('touchstart.modalSwipe touchmove.modalSwipe touchend.modalSwipe');
 
-            modal.on('touchstart', function (e) {
+            modalBox.on('touchstart.modalSwipe', function (e) {
+                if ($(e.target).closest('.modal-close-btn, a, button, input, textarea, select, label').length) {
+                    isDragging = false;
+                    return;
+                }
+
                 startY = e.originalEvent.touches[0].clientY;
-                modal.css('transition', 'none');
+                moveY = 0;
+                isDragging = true;
+
+                modalBox.css('transition', 'none');
             });
 
-            modal.on('touchmove', function (e) {
+            modalBox.on('touchmove.modalSwipe', function (e) {
+                if (!isDragging) return;
 
                 moveY = e.originalEvent.touches[0].clientY - startY;
 
                 if (moveY > 0) {
-                    modal.css('transform', `translateY(${moveY}px)`);
+                    modalBox.css('transform', `translateY(${moveY}px)`);
                 }
-
             });
 
-            modal.on('touchend', function () {
+            modalBox.on('touchend.modalSwipe', function () {
+                if (!isDragging) return;
 
-                modal.css('transition', 'transform 0.25s ease');
+                modalBox.css('transition', 'transform 0.25s ease');
 
                 if (moveY > threshold) {
+                    modalBox.css('transform', 'translateY(100%)');
 
-                    modal.css('transform', 'translateY(100%)');
-
-                    setTimeout(function(){
+                    setTimeout(() => {
                         $.magnificPopup.close();
-                    },200);
-
+                    }, 200);
                 } else {
-
-                    modal.css('transform', 'translateY(0)');
+                    modalBox.css('transform', 'translateY(0)');
                 }
 
                 moveY = 0;
-
+                isDragging = false;
             });
 
+            $(document)
+                .off('click.modalClose', '.modal-close-btn')
+                .on('click.modalClose', '.modal-close-btn', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $.magnificPopup.close();
+                });
+        },
+
+        close: function () {
+            $(document).off('click.modalClose', '.modal-close-btn');
+
+            $('.mfp-content .mfp-hide').css({
+                transform: '',
+                transition: ''
+            });
         }
     }
 });
-
 
 
 

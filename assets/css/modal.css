@@ -6,23 +6,60 @@
 }
 
 body .mfp-close {
+   display: none;
+}
+
+
+.icon-close{
+    content: url("../img/icons/close-mod.svg");
+}
+
+
+
+
+
+
+
+
+
+.modal-window {
+    position: relative;
+    will-change: transform;
+}
+
+.modal-close-btn {
     position: absolute;
-    top: 0;
-    right: 24px;
-    margin-top: 24px;
-    width: 40px;
-    height: 40px;
+    top: 16px;
+    right: 16px;
+    z-index: 20;
     background: rgba(244, 244, 244, 1);
-    color: rgba(38, 43, 49, 1);
     border-radius: 50%;
     font-family: 'Alethia-Pro';
-    opacity: 1;
-    font-size: 40px;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5px;
+
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
+
+
+
+
+
+
 .close, .modal-close {
     position: absolute;
     top: 24px;
@@ -246,6 +283,7 @@ body .mfp-close {
     background: rgba(71, 81, 93, 1);
     color: #ffffff;
     height: 60px;
+    border: unset;
 }
 .btn-submit.disabled {
     pointer-events: none;
@@ -351,8 +389,16 @@ body .mfp-close {
     color: rgba(38, 43, 49, 1);
 }
 
+.modal{
+    will-change: transform;
+}
 
-
+@media (max-width: 1199px){
+    body .mfp-close {
+        right: 17px;
+        margin-top: 12px;
+    }
+}
 @media (max-width: 1020px){
     .modal-form-main {
         border-radius: 24px 24px 0 0;

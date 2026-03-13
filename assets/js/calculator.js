@@ -8,22 +8,32 @@ const states = [
 ];
 
 const labelsData = {
-    2026:"РВЭ",
-    2029:"3 года",
-    2031:"5 лет",
-    2033:"7 лет",
-    2036:""
+    2026: "РВЭ",
+    2029: "3 года",
+    2031: "5 лет",
+    2033: "7 лет",
+    2036: ""
 };
 
-/* ================== ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ ТАЙМЛАЙНА ================== */
-function initTimeline(container){
+/* ================== СКЛОНЕНИЕ ЛЕТ ================== */
+function getYearsLabel(num) {
+    const n = Math.abs(num) % 100;
+    const n1 = n % 10;
 
+    if (n > 10 && n < 20) return num + " лет";
+    if (n1 > 1 && n1 < 5) return num + " года";
+    if (n1 === 1) return num + " год";
+    return num + " лет";
+}
+
+/* ================== ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ ТАЙМЛАЙНА ================== */
+function initTimeline(container) {
     const start = states[0].year;
-    const end = states[states.length-1].year;
+    const end = states[states.length - 1].year;
     const totalYears = end - start;
 
-    const MIN_POS = 6;   // минимальный отступ слева (%)
-    const MAX_POS = 100; // максимум справа
+    const MIN_POS = 0;
+    const MAX_POS = 100;
 
     const track = container.querySelector(".timeline-track");
     const thumb = container.querySelector(".timeline-thumb");
@@ -35,21 +45,21 @@ function initTimeline(container){
     const topItems = container.querySelectorAll(".js-top-item");
     const mobileItems = container.querySelectorAll(".timeline-track-mobile li");
 
-    let current = start;
+    // СТАРТ НЕ С 2026, А СО ВТОРОЙ РИСКИ = 2027
+    let current = start + 1;
 
     /* ================== СОЗДАНИЕ ТИКОВ И ПОДПИСЕЙ ================== */
-    for(let year=start; year<=end; year++){
-
+    for (let year = start; year <= end; year++) {
         const percent = MIN_POS + ((year - start) / totalYears) * (MAX_POS - MIN_POS);
 
         const tick = document.createElement("div");
         tick.className = "tick";
         tick.dataset.year = year;
-        if(labelsData[year] !== undefined) tick.classList.add("big");
+        if (labelsData[year] !== undefined) tick.classList.add("big");
         tick.style.left = percent + "%";
         ticks.appendChild(tick);
 
-        if(labelsData[year] !== undefined){
+        if (labelsData[year] !== undefined) {
             const label = document.createElement("div");
             label.className = "label";
             label.style.left = percent + "%";
@@ -59,8 +69,7 @@ function initTimeline(container){
     }
 
     /* ================== ПОЛУЧЕНИЕ БЛИЖАЙШЕГО ГОДА ================== */
-    function getNearestYear(percent){
-
+    function getNearestYear(percent) {
         percent = Math.max(MIN_POS / 100, Math.min(percent, MAX_POS / 100));
 
         const normalized = (percent - MIN_POS / 100) / ((MAX_POS - MIN_POS) / 100);
@@ -70,32 +79,44 @@ function initTimeline(container){
     }
 
     /* ================== ИНТЕРПОЛЯЦИЯ ================== */
-    function getInterpolatedState(year){
+    function getInterpolatedState(year) {
+        if (year <= states[0].year) {
+            return {
+                ...states[0],
+                label: "0 лет"
+            };
+        }
 
-        if(year <= states[0].year) return states[0];
-        if(year >= states[states.length-1].year) return states[states.length-1];
+        if (year >= states[states.length - 1].year) {
+            return {
+                ...states[states.length - 1],
+                label: getYearsLabel(year - start)
+            };
+        }
 
         let prev, next;
-        for(let i=0;i<states.length-1;i++){
-            if(year >= states[i].year && year <= states[i+1].year){
+        for (let i = 0; i < states.length - 1; i++) {
+            if (year >= states[i].year && year <= states[i + 1].year) {
                 prev = states[i];
-                next = states[i+1];
+                next = states[i + 1];
                 break;
             }
         }
 
-        const t = (year - prev.year)/(next.year - prev.year);
+        const t = (year - prev.year) / (next.year - prev.year);
 
-        function parseVal(val){ return Number(val.replace(/\D/g,'')) }
+        function parseVal(val) {
+            return Number(val.replace(/\D/g, ''));
+        }
 
-        const sale = Math.round(parseVal(prev.sale) + (parseVal(next.sale) - parseVal(prev.sale))*t);
-        const rent = Math.round(parseVal(prev.rent) + (parseVal(next.rent) - parseVal(prev.rent))*t);
-        const totalVal = Math.round(parseVal(prev.total) + (parseVal(next.total) - parseVal(prev.total))*t);
-        const percentVal = Math.round(parseVal(prev.percent) + (parseVal(next.percent) - parseVal(prev.percent))*t);
+        const sale = Math.round(parseVal(prev.sale) + (parseVal(next.sale) - parseVal(prev.sale)) * t);
+        const rent = Math.round(parseVal(prev.rent) + (parseVal(next.rent) - parseVal(prev.rent)) * t);
+        const totalVal = Math.round(parseVal(prev.total) + (parseVal(next.total) - parseVal(prev.total)) * t);
+        const percentVal = Math.round(parseVal(prev.percent) + (parseVal(next.percent) - parseVal(prev.percent)) * t);
 
         return {
             year,
-            label: (year-start+1) + " лет",
+            label: getYearsLabel(year - start),
             sale: sale.toLocaleString('ru-RU') + " ₽",
             rent: rent.toLocaleString('ru-RU') + " ₽",
             total: totalVal.toLocaleString('ru-RU') + " ₽",
@@ -104,8 +125,7 @@ function initTimeline(container){
     }
 
     /* ================== ОБНОВЛЕНИЕ ================== */
-    function update(){
-
+    function update() {
         const state = getInterpolatedState(current);
         const percent = MIN_POS + ((current - start) / totalYears) * (MAX_POS - MIN_POS);
 
@@ -113,13 +133,13 @@ function initTimeline(container){
         progress.style.width = percent + "%";
         tooltip.innerHTML = state.label;
 
-        container.querySelectorAll(".tick").forEach(tick=>{
+        container.querySelectorAll(".tick").forEach(tick => {
             const year = Number(tick.dataset.year);
             tick.classList.toggle("active", year <= current);
         });
 
         const blocks = container.querySelectorAll(".profit-sale-price");
-        if(blocks.length >= 3){
+        if (blocks.length >= 3) {
             blocks[0].children[0].innerText = state.sale;
             blocks[0].children[1].innerText = state.percent;
             blocks[1].children[0].innerText = state.rent;
@@ -129,11 +149,11 @@ function initTimeline(container){
         }
 
         let activeIndex = -1;
-        if(current >= 2029 && current < 2031) activeIndex = 0;
-        else if(current >= 2031 && current < 2033) activeIndex = 1;
-        else if(current >= 2033 && current <= 2036) activeIndex = 2;
+        if (current >= 2029 && current < 2031) activeIndex = 0;
+        else if (current >= 2031 && current < 2033) activeIndex = 1;
+        else if (current >= 2033 && current <= 2036) activeIndex = 2;
 
-        topItems.forEach((el,i)=>{
+        topItems.forEach((el, i) => {
             el.classList.toggle("active", i === activeIndex);
         });
 
@@ -146,9 +166,9 @@ function initTimeline(container){
     update();
 
     /* ================== КЛИК ПО ЛИНИИ ================== */
-    track.addEventListener("click",(e)=>{
+    track.addEventListener("click", (e) => {
         const rect = track.getBoundingClientRect();
-        const percent = (e.clientX - rect.left)/rect.width;
+        const percent = (e.clientX - rect.left) / rect.width;
         current = getNearestYear(percent);
         update();
     });
@@ -156,19 +176,19 @@ function initTimeline(container){
     /* ================== DRAG ================== */
     let isDragging = false;
 
-    function startDrag(e){
+    function startDrag(e) {
         isDragging = true;
         document.body.style.userSelect = "none";
         moveAt(e);
     }
 
-    function stopDrag(){
+    function stopDrag() {
         isDragging = false;
         document.body.style.userSelect = "";
     }
 
-    function moveAt(e){
-        if(!isDragging) return;
+    function moveAt(e) {
+        if (!isDragging) return;
 
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const rect = track.getBoundingClientRect();
@@ -185,13 +205,13 @@ function initTimeline(container){
     document.addEventListener("mousemove", moveAt);
     document.addEventListener("mouseup", stopDrag);
 
-    thumb.addEventListener("touchstart", startDrag);
-    document.addEventListener("touchmove", moveAt);
+    thumb.addEventListener("touchstart", startDrag, { passive: true });
+    document.addEventListener("touchmove", moveAt, { passive: true });
     document.addEventListener("touchend", stopDrag);
 
     /* ================== МОБИЛЬНЫЕ КНОПКИ ================== */
-    mobileItems.forEach(item=>{
-        item.addEventListener("click", ()=>{
+    mobileItems.forEach(item => {
+        item.addEventListener("click", () => {
             current = Number(item.dataset.year);
             update();
         });
