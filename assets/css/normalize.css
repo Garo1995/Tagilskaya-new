@@ -120,8 +120,6 @@ table {
     outline: none !important;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
-* {
     user-select: none;
     -webkit-user-select: none; /* Для Safari */
     -moz-user-select: none;    /* Для Firefox */
@@ -156,11 +154,14 @@ input[type=number] {
 }
 img {
     max-width: 100%;
+    height: auto;
+    display: block;
 }
 body {
     background: rgba(51, 60, 70, 1);
     font-family: 'Alethia-Pro';
-
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .container{

@@ -712,7 +712,6 @@ body.compensate-for-scrollbar {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    white-space: nowrap;
 }
 
 .fancybox-share__button:visited,
@@ -812,9 +811,7 @@ body.compensate-for-scrollbar {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0;
-    position: absolute;
     position: relative;
-    white-space: nowrap;
     width: 100%;
 }
 

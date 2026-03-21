@@ -1,39 +1,49 @@
-h1{
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+h1 {
     text-align: center;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 1);
+    color: #000;
     font-weight: 400;
-    font-size: 56px;
-    line-height: 64px;
-    letter-spacing: 3px;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
+    letter-spacing: clamp(1px, 0.25vw, 3px);
 }
-h2{
-    color: #ffffff;
+
+h2 {
     font-weight: 400;
-    font-size: 48px;
-    line-height: 100%;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.1;
 }
-h3{
-    color: #FFFFFF;
+
+h3 {
     font-weight: 400;
-    font-size: 32px;
-    line-height: 120%;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.2;
     text-align: left;
 }
+
 h4 {
     font-weight: 400;
-    font-size: 32px;
-    line-height: 32px;
-    color: rgba(255, 255, 255, 1);
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.2;
 }
-p{
+
+p {
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: rgba(255, 255, 255, 1);
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.5;
 }
-.section-margin{
-    margin-top: 80px;
+
+.section-margin {
+    margin-top: clamp(40px, 6vw, 80px);
 }
 
 
@@ -267,11 +277,10 @@ body{
     border-radius: 48px;
     gap: 16px;
     padding: 4px 4px 4px 32px;
-    white-space: nowrap;
     transition: 0.3s;
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -310,7 +319,7 @@ body{
     color: rgba(51, 60, 70, 1);
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
 }
 .presentation-dow:hover{
     background: rgba(191, 144, 118, 1);
@@ -352,7 +361,8 @@ body{
     bottom: 20px;
     right: 20px;
     display: flex;
-    width: 150px;
+    max-width: 150px;
+    width: 100%;
 }
 .business-photo img{
     width: 100%;
@@ -377,7 +387,8 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 419px;
+    max-width: 419px;
+    width: 100%;
     height: 100%;
     background-image: url("../img/circle-blur-1.png");
     background-repeat: no-repeat;
@@ -389,7 +400,8 @@ body{
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 272px;
+    max-width: 272px;
+    width: 100%;
     height: 100%;
     background-image: url("../img/circle-blur-2.png");
     background-repeat: no-repeat;
@@ -405,14 +417,11 @@ body{
     z-index: 1;
 }
 .timer-title h3{
-    font-weight: 400;
     font-size: 32px;
-    line-height: 38px;
-    color: #FFFFFF;
+    line-height: 1.2;
     text-align: left;
 }
 .timer-title p{
-    color: #FFFFFF;
     margin-top: 4px;
 }
 .timer{
@@ -459,7 +468,7 @@ body{
 .time-label {
     font-weight: 400;
     font-size: 16px;
-    line-height: 26px;
+    line-height: 1.3;
     text-align: center;
     color: #FFFFFF;
 }
@@ -481,19 +490,15 @@ body{
     position: relative;
 }
 .block-shares-box h3{
-    color: rgba(255, 255, 255, 1);
-    font-weight: 400;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 1.3;
 }
 .block-shares-box .arrow-top-right{
     position: absolute;
     bottom: 24px;
     right: 32px;
 }
-.block-shares-box:hover{
 
-}
 .block-shares-box:hover .arrow-top-right {
     background: rgba(191, 144, 118, 1);
 }
@@ -604,7 +609,7 @@ body{
     color: rgba(63, 71, 82, 1);
     font-weight: 400;
     font-size: 18px;
-    line-height: 19px;
+    line-height: 1.1;
     text-transform: uppercase;
 }
 .comme-estate-name p{
@@ -727,7 +732,7 @@ body{
     color: rgba(255, 255, 255, 1);
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
 }
 
 
@@ -817,7 +822,7 @@ body{
 .near-house-photo{
     width: 100%;
     position: relative;
-    height: 390px;
+    min-height: 390px;
     border-radius: 40px;
     transition: 0.3s;
 }
@@ -827,7 +832,7 @@ body{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 236px;
+    min-height: 236px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 156.84%);
     border-radius: 0 0 40px 40px;
 }
@@ -859,13 +864,7 @@ body{
     transform: rotate(-45deg);
     transition: 0.3s;
 }
-/*.arrow-top-right:hover{
-    background: rgba(191, 144, 118, 1);
 
-}
-.arrow-top-right:hover i {
-    filter: brightness(0) saturate(100%) invert(1);
-}*/
 .quiet-out{
     gap: 24px;
 }
@@ -881,7 +880,7 @@ body{
 }
 .companies-card{
     border-radius: 40px;
-    height: 356px;
+    min-height: 356px;
     width: calc(50% - 9px);
     transition: 0.3s;
     background: rgba(244, 244, 244, 1);
@@ -920,7 +919,7 @@ body{
     transition: 0.3s;
     color: rgba(0, 0, 0, 1);
     font-size: 24px;
-    line-height: 26px;
+    line-height: 1.1;
 }
 .companies-card h2{
     color: rgba(0, 0, 0, 1);
@@ -1013,7 +1012,7 @@ body{
 .rental-income-info h3{
     color: rgba(196, 157, 118, 1);
     font-weight: 400;
-    line-height: 64px;
+    line-height: 1.15;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-size: 56px;
@@ -1061,7 +1060,7 @@ body{
     border-radius: 40px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 1);
     text-align: center;
     width: 100%;
@@ -1110,13 +1109,13 @@ body{
     color: rgba(255, 255, 255, 0.5);
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
 }
 .payback-period-title h3{
     margin-top: 24px;
     font-weight: 400;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 1.2;
 }
 .payback-period-col{
     margin-top: 24px;
@@ -1132,7 +1131,7 @@ body{
 .payback-details p {
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
     color: rgba(255, 255, 255, 0.5);
     max-width: 262px;
     width: 100%;
@@ -1142,7 +1141,6 @@ body{
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    white-space: nowrap;
 }
 
 
@@ -1150,8 +1148,6 @@ body{
 
 
 /*==============-rental-style-end-=============*/
-
-
 
 
 
@@ -1290,14 +1286,14 @@ body{
     color: rgba(0, 0, 0, 1);
     font-weight: 400;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 1;
     text-align: left;
 }
 .floor-price p{
     color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 1.1;
     margin-top: 14px;
 }
 .floor-selection-fon{
@@ -1369,7 +1365,6 @@ body{
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-    white-space: nowrap;
     width: max-content;
     margin-top: 24px;
     background: #FFFFFF;
@@ -1378,7 +1373,7 @@ body{
     color: rgba(51, 60, 70, 1);
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.15;
 }
 
 .btn-white:hover{
@@ -1480,9 +1475,10 @@ body .popup-gallery .mfp-close {
 .thumbs-slider{
     max-width: 400px;
     width: 100%;
-    height: 700px;
+    min-height: 700px;
     border-radius: 40px;
-
+    max-height: 700px;
+    height: 100%;
 }
 .thumbs-slider .swiper-slide{
     cursor: pointer;
@@ -1524,10 +1520,9 @@ body .popup-gallery .mfp-close {
     position: relative;
     display: flex;
     align-items: flex-end;
-    height: 546px;
+    min-height: 546px;
     overflow: hidden;
     background-position: center;
-
 }
 
 .developer-ren-name{
@@ -1564,7 +1559,7 @@ body .popup-gallery .mfp-close {
 .developer-boxes{
     width: calc(50% - 12px);
     background: rgba(0, 0, 0, 0.3);
-    height: 265px;
+    min-height: 265px;
     padding: 48px 34px 48px 24px;
     border-radius: 40px;
     display: flex;
@@ -1624,7 +1619,7 @@ body .popup-gallery .mfp-close {
     width: 100%;
     object-fit: cover;
     border-radius: 40px 40px 0 0;
-    height: 385px;
+    min-height: 385px;
 
 }
 .projects-complete-info .arrow-top-rig .icon-right {
@@ -1650,18 +1645,13 @@ body .popup-gallery .mfp-close {
 
 }
 .projects-complete-name h3{
-    color: rgba(255, 255, 255, 1);
-    font-weight: 400;
     font-size: 24px;
-    line-height: 34px;
+    line-height: 1.35;
 }
 .projects-complete-name p{
     margin-top: 8px;
-    font-weight: 400;
     font-size: 24px;
     line-height: 100%;
-    color: rgba(255, 255, 255, 1);
-
 }
 
 
@@ -1677,7 +1667,7 @@ body .popup-gallery .mfp-close {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 491px;
+    min-height: 491px;
     padding: 24px 24px 24px;
     border-radius: 40px;
     background-size: cover;
@@ -1932,10 +1922,10 @@ body .popup-gallery .mfp-close {
     padding: 48px 32px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     transition: 0.3s;
     cursor: pointer;
-    min-height: 272px;
+    min-height: 320px;
 }
 .news-box:hover{
     border: 1px solid #BF9076;
@@ -1945,8 +1935,11 @@ body .popup-gallery .mfp-close {
 }
 .news-box p{
     color: rgba(255, 255, 255, 0.5);
-    height: 88px;
+    max-height: 144px;
+    height: 100%;
     overflow: hidden;
+    font-size: 24px;
+    line-height: 100%;
 }
 
 
@@ -2103,7 +2096,6 @@ footer{
     padding: 0 16px 18px;
     border-bottom: 2px solid transparent;
     transition: 0.3s;
-    white-space: nowrap;
 }
 .footer-menu ul li a:hover{
     opacity: 1;
@@ -2513,10 +2505,6 @@ footer{
 
 
 
-
-
-
-
 .open-all-news-act{
     padding-top: 1px;
 }
@@ -2534,7 +2522,6 @@ footer{
     width: 100%;
     border-radius: 50px;
     gap: 10px;
-    white-space: nowrap;
 }
 
 .sort-floor span{
@@ -2759,7 +2746,6 @@ footer{
 }
 .found-cnt-href span {
     color: rgba(63, 71, 82, 1);
-    white-space: nowrap;
     font-weight: 400;
     font-size: 13px;
     line-height: 105%;
@@ -2790,7 +2776,7 @@ footer{
     width: 100%;
     background: #F4F4F4;
     border-radius: 20px 20px 24px 24px;
-    height: 260px;
+    min-height: 260px;
 }
 
 .found-cnt-box:hover .found-cnt-info h4{
@@ -3395,7 +3381,6 @@ footer{
     align-items: center;
     justify-content: center;
     padding: 9px 24px;
-    white-space: nowrap;
 }
 
 .real-estate-filter ul {
@@ -3471,7 +3456,7 @@ footer{
     border-radius: 40px;
     display: flex;
     align-items: flex-end;
-    height: 615px;
+    min-height: 615px;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -3601,15 +3586,44 @@ footer{
     width: 100%;
     cursor: pointer;
 }
-.select-layout-svg svg{
-    width: 100%;
-    height: 368px;
-
-}
+.select-layout-svg svg,
 .select-layout-svg img{
     width: 100%;
+    height: 100%;
+}
+
+
+.select-layout-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.select-layout-svg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.select-layout-svg.is-active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+.select-layout-rel{
     height: 368px;
 }
+.select-layout-rel .select-layout-svg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 .parameters-floor-zoom{
     position: absolute;
     background: rgba(191, 144, 118, 1);
@@ -3745,7 +3759,6 @@ footer{
     font-size: 18px;
     line-height: 22px;
     color: #fff;
-    white-space: nowrap;
 }
 
 
@@ -3907,7 +3920,7 @@ body.modal-open {
     }
     .timer-title h3 {
         font-size: 28px;
-        line-height: 30px;
+        line-height: 1.1;
     }
 
     h2 {
@@ -3973,9 +3986,13 @@ body.modal-open {
         padding: 32px 24px;
         min-height: 210px;
     }
-
+    .news-box p {
+        max-height: 143px;
+        font-size: 20px;
+        line-height: 115%;
+    }
     .construct-card {
-        height: 441px;
+        min-height: 441px;
         padding: 22px 16px 20px;
     }
 
@@ -4043,7 +4060,7 @@ body.modal-open {
         max-width: 386px;
     }
     .floor-room-cnt {
-        height: 550px;
+        min-height: 550px;
     }
     .floor-room-fon {
         padding: 24px;
@@ -4134,7 +4151,7 @@ body.modal-open {
         padding: 36px 34px;
     }
     .companies-card {
-        height: 320px;
+        min-height: 320px;
     }
     .block-shares-box h3 {
         font-size: 20px;
@@ -4200,7 +4217,7 @@ body.modal-open {
         font-size: 20px;
     }
     .developer-boxes {
-        height: 265px;
+        min-height: 265px;
         padding: 32px 37px 30px 24px;
         border-radius: 32px;
     }
@@ -4226,6 +4243,7 @@ body.modal-open {
 @media (max-width: 1299px){
     .companies-card {
         height: auto;
+        min-height: auto;
     }
     .footer-box {
         padding: 24px;
@@ -4269,8 +4287,9 @@ body.modal-open {
         max-width: 780px;
     }
     .thumbs-slider {
-        height: 588px;
+        min-height: 588px;
         border-radius: 30px;
+        max-height: 588px;
     }
     .thumbs-slider .swiper-slide img {
         border-radius: 30px;
@@ -4324,7 +4343,7 @@ body.modal-open {
         gap: 18px;
     }
     .floor-room-cnt {
-        height: 520px;
+        min-height: 520px;
     }
     .companies-card p {
         font-size: 18px;
@@ -4360,7 +4379,11 @@ body.modal-open {
         height: 458px;
     }
 
-
+    .news-box p {
+        max-height: 130px;
+        font-size: 18px;
+        line-height: 118%;
+    }
 
 }
 @media (max-width: 1199px){
@@ -4406,7 +4429,7 @@ body.modal-open {
         height: 32px;
     }
     .near-house-photo {
-        height: 325px;
+        min-height: 325px;
         border-radius: 24px;
     }
     .near-house-photo .peaceful-name {
@@ -4475,7 +4498,8 @@ body.modal-open {
         max-width: 690px;
     }
     .thumbs-slider {
-        height: 518px;
+        min-height: 518px;
+        max-height: 518px;
     }
     .popup-gallery {
         max-width: 900px;
@@ -4561,7 +4585,7 @@ body.modal-open {
         font-size: 20px;
     }
     .developer-ren-cnt {
-        height: 495px;
+        min-height: 495px;
     }
     .developer-renowned {
         margin-top: 30px;
@@ -4573,7 +4597,7 @@ body.modal-open {
         padding: 28px 28px 35px 28px;
     }
     .developer-boxes {
-        height: 240px;
+        min-height: 240px;
         padding: 32px 20px 32px 20px;
     }
     .rental-income-item {
@@ -4595,7 +4619,7 @@ body.modal-open {
         justify-content: center;
     }
     .construct-card {
-        height: 485px;
+        min-height: 485px;
         border-radius: 24px;
     }
     .news-box {
@@ -4625,11 +4649,11 @@ body.modal-open {
         border-radius: 24px;
     }
     .timer-wrapper:before {
-        width: 376px;
+        max-width: 376px;
         border-radius: 20px 0 0 22px;
     }
     .timer-wrapper:after {
-        width: 209px;
+        max-width: 209px;
         border-radius: 0 22px 22px 0;
     }
 
@@ -4692,7 +4716,7 @@ body.modal-open {
         line-height: 17px;
     }
     .rental-income-info {
-        max-width: 1000px;
+        max-width: 100%;
     }
     .near-house-photo:before {
         border-radius: 24px;
@@ -4714,6 +4738,33 @@ body.modal-open {
         border-radius: 29px;
     }
 }
+@media (max-width: 1099px){
+    .footer-menu{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin-top: 16px;
+        padding-bottom: 10px;
+    }
+    .footer-menu::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .footer-menu::-webkit-scrollbar-thumb {
+        width: 0;
+        height: 0;
+    }
+    .footer-menu ul {
+        gap: 16px;
+        margin-bottom: -10px;
+    }
+    .footer-menu ul li a {
+        padding: 0 15px 16px;
+        font-size: 16px;
+    }
+    .footer-menu .container{
+        width: max-content;
+    }
+}
 @media (max-width: 1020px) {
     .business-flex {
         flex-direction: column;
@@ -4721,7 +4772,6 @@ body.modal-open {
     .business-card {
         width: 100%;
     }
-
     .business-info {
         max-width: 410px;
         margin: 0 auto 0;
@@ -4759,13 +4809,17 @@ body.modal-open {
         height: 3px;
         border-radius: 10px;
     }
-
+    .news-box p {
+        max-height: 88px;
+        font-size: 18px;
+        line-height: 22px;
+    }
 
     .timer-title p{
         text-align: center;
     }
     .timer-wrapper:before {
-        width: 259px;
+        max-width: 259px;
         border-radius: 20px 0 0 20px;
         background-position: right;
     }
@@ -4807,7 +4861,7 @@ body.modal-open {
         flex-direction: column;
     }
     .developer-ren-cnt {
-        height: 546px;
+        min-height: 546px;
         max-width: 100%;
     }
     .developer-ren-wrap {
@@ -5217,31 +5271,8 @@ body.modal-open {
     footer {
         padding-top: 42px;
     }
-    .footer-menu{
-        overflow-x: scroll;
-        overflow-y: hidden;
 
-        padding-bottom: 10px;
-    }
-    .footer-menu::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-    .footer-menu::-webkit-scrollbar-thumb {
-        width: 0;
-        height: 0;
-    }
-    .footer-menu ul {
-        gap: 16px;
-        margin-bottom: -10px;
-    }
-    .footer-menu ul li a {
-        padding: 0 15px 16px;
-        font-size: 16px;
-    }
-    .footer-menu {
-        margin-top: 16px;
-    }
+
 
     .floor-room {
         gap: 16px;
@@ -5403,7 +5434,7 @@ body.modal-open {
     .business-place {
         bottom: 15px;
         right: 15px;
-        width: 100px;
+        max-width: 100px;
     }
 
 }
@@ -5708,10 +5739,10 @@ body.modal-open {
         gap: 16px;
     }
     .timer-wrapper:before {
-        width: 190px;
+        max-width: 190px;
     }
     .timer-wrapper:after {
-        width: 227px;
+        max-width: 227px;
     }
 
     .parameters-btn {
@@ -5784,6 +5815,7 @@ body.modal-open {
     }
     .developer-boxes {
         height: auto;
+        min-height: auto;
         padding: 24px;
         width: 100%;
         gap: 16px;
@@ -5909,7 +5941,7 @@ body.modal-open {
     .business-place {
         bottom: 12px;
         right: 12px;
-        width: 84px;
+        max-width: 84px;
     }
 
     .tagilskaya-logo span {
@@ -5931,9 +5963,7 @@ body.modal-open {
     .gallery-slider{
         border-radius: 18px;
     }
-    .news-box p{
-        height: 80px;
-    }
+
     .rental-income-item p {
         color: #fff;
     }
@@ -6019,7 +6049,7 @@ body.modal-open {
 
     }
     .construct-card {
-        height: 494px;
+        min-height: 494px;
     }
     .advantages-card-name h4 {
         font-size: 24px;
