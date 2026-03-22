@@ -116,7 +116,7 @@ body .mfp-close {
     max-width: 600px;
     width: 100%;
     border-radius: 40px;
-    padding: 64px 40px;
+    padding: 54px 40px 40px;
     position: relative;
 }
 
@@ -135,19 +135,19 @@ body .mfp-close {
 
 
 .modal-form-main h3{
-    font-family: 'Romul';
-
     text-align: left;
     font-weight: 400;
     font-size: 32px;
     line-height: 100%;
     color: rgba(38, 43, 49, 1);
     margin-bottom: 8px;
-    text-transform: uppercase;
 }
 .modal-form-main>p{
     color: rgba(44, 51, 59, 1);
     margin-bottom: 32px;
+    font-size: 20px;
+    max-width: 420px;
+    width: 100%;
 }
 
 .modal-inp{
@@ -161,12 +161,12 @@ body .mfp-close {
 .modal-inp input{
     width: 100%;
     transition: 0.3s;
-    height: 70px;
-    padding: 20px 40px;
+    height: 64px;
+    padding: 16px 40px;
     border-radius: 62px;
     background: rgba(244, 244, 244, 1);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 100%;
     color: rgba(0, 0, 0, 1);
 }
@@ -346,15 +346,15 @@ body .mfp-close {
 }
 
 .frame-select .jq-selectbox__select-text{
-    padding: 16px 24px;
+    padding: 16px 40px;
     width: 100%;
-    height: 70px;
+    height: 64px;
     display: flex;
     align-items: center;
     transition: 0.3s;
     color: #000000;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 100%;
 }
 .frame-select .jq-selectbox__dropdown {

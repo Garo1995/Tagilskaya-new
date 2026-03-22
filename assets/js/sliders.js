@@ -113,7 +113,7 @@ let constructDescSwiper = new Swiper(".construct-desc-slider", {
 
     breakpoints: {
 
-        '1299': {
+        '1199': {
             slidesPerView: 4,
             slidesPerGroup: 1,
         },

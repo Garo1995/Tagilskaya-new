@@ -52,6 +52,8 @@ header.hide .logo {
     text-decoration: none;
     color: #262B31;
     transition: 0.3s;
+    white-space: nowrap;
+
 }
 .header-phone .icon-phone{
     transition: 0.3s;
@@ -124,7 +126,7 @@ header .btn:hover{
     box-shadow: 4px 4px 30px 0px rgba(83, 99, 116, 0.3);
     background: #FFFFFF;
     width: 360px;
-    padding: 32px;
+    padding: 24px;
     border-radius: 40px;
     position: absolute;
     top: 88px;
@@ -148,7 +150,7 @@ header .btn:hover{
     font-size: 16px;
     line-height: 1;
     color: rgba(0, 0, 0, 0.60);
-    padding: 16px 16px;
+    padding: 12px 16px;
     border-radius: 16px;
 }
 .head-menu a:hover{
@@ -176,7 +178,7 @@ header .btn:hover{
     }
     .btn {
         font-size: 16px;
-        line-height: 20px;
+        line-height: 16px;
         padding: 11px 24px;
     }
     header {
@@ -192,10 +194,48 @@ header .btn:hover{
     .head-menu a {
         padding: 12px 14px;
     }
+    .header-phone {
+        padding: 11px 20px;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .header-phone .icon-phone {
+        width: 20px;
+    }
+    .open-menu-line {
+        width: 18px;
+        gap: 3px;
+    }
+    .head-menu a {
+        padding: 8px 13px;
+        font-size: 15px;
+    }
+    .head-menu {
+        top: 67px;
+        right: 18px;
+        padding: 20px 16px;
+        width: 315px;
+    }
+    header.hide .header-phone {
+        padding: 11px 11px;
+    }
+    .developer-ren-cnt {
+        min-height: 480px;
+    }
+    header.hide .header-main {
+        width: 640px;
+    }
+
+
+
 }
 @media (max-width: 1199px){
     .logo {
         width: 170px;
+    }
+    .head-menu a {
+        padding: 10px 13px;
     }
     header {
         top: 12px;
@@ -205,7 +245,9 @@ header .btn:hover{
         background: #F4F4F4;
         border-radius: 24px;
     }
-
+    header.hide .header-phone {
+        padding: 12px 12px;
+    }
     .open-menu span {
         font-size: 14px;
         line-height: 18px;
