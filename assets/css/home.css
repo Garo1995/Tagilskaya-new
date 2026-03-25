@@ -4435,7 +4435,9 @@ body.modal-open {
     .tech-spec-info span {
         font-size: 24px;
     }
-
+    .tech-spec-info {
+        min-height: 175px;
+    }
 
 }
 
