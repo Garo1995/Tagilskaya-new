@@ -2122,7 +2122,7 @@ footer {
 .footer-box {
     backdrop-filter: blur(10px);
     width: 100%;
-    padding: 40px;
+    padding: 40px 40px 19px;
     gap: 32px;
     border-radius: 40px;
     position: relative;
@@ -2130,7 +2130,15 @@ footer {
     background: rgba(0, 0, 0, 0.3);
 
 }
-
+.footer-box:after{
+    content: "";
+    position: absolute;
+    bottom: 59px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
 .sales-office {
     gap: 32px;
 }
@@ -2188,11 +2196,13 @@ footer {
 .sales-office-policy .site-more-info{
     color: rgba(196, 157, 118, 1);
 }
+.according-portal{
+    margin-top: 8px;
+    padding-top: 16px;
+}
 .site-more-info{
-
     gap: 8px;
     color: rgba(196, 157, 118, 1);
-
 }
 .site-more-info i{
     transition: 0.3s;
@@ -4591,6 +4601,13 @@ body.modal-open {
     .income-asset-price p {
         max-width: 324px;
     }
+    .according-portal {
+        margin-top: 0;
+        padding-top: 16px;
+    }
+    .footer-box:after {
+        bottom: 63px;
+    }
     .profit-sale-price {
         margin-top: 16px;
     }
@@ -5944,14 +5961,16 @@ body.modal-open {
 
     .footer-box {
         max-width: 100%;
-        padding: 40px;
+        padding: 40px 40px 20px;
     }
 
     footer {
         padding-top: 42px;
     }
 
-
+    .footer-box:after {
+        bottom: 60px;
+    }
     .floor-room {
         gap: 16px;
         margin-top: 34px;
@@ -6524,7 +6543,9 @@ body.modal-open {
     .quiet-out {
         gap: 16px;
     }
-
+    .footer-box:after {
+        bottom: 86px;
+    }
     .timer-wrapper:before {
         max-width: 190px;
     }
@@ -7071,5 +7092,15 @@ body.modal-open {
         max-width: 163px;
         font-size: 12px;
         line-height: 16px;
+    }
+    .footer-box {
+        padding: 30px 30px 18px;
+    }
+
+
+}
+@media (max-width: 341px) {
+    .footer-box {
+        padding: 30px 18px 18px;
     }
 }
