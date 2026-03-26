@@ -414,14 +414,7 @@ body {
     text-align: center;
 }
 
-.business-place {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    max-width: 150px;
-    width: 100%;
-}
+
 
 .business-photo img {
     width: 100%;
@@ -2176,7 +2169,7 @@ footer {
 
 
 .sales-office-policy {
-    gap: 8px;
+    gap: 24px;
 }
 
 .sales-office-policy a {
@@ -2185,13 +2178,29 @@ footer {
     line-height: 22px;
     color: rgba(255, 255, 255, 0.6);
     transition: 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 .sales-office-policy a:hover {
     color: #FFFFFF;
 }
+.sales-office-policy .site-more-info{
+    color: rgba(196, 157, 118, 1);
+}
+.site-more-info{
 
+    gap: 8px;
+    color: rgba(196, 157, 118, 1);
 
+}
+.site-more-info i{
+    transition: 0.3s;
+    transform: unset;
+}
+.site-more-info:hover i{
+    filter: brightness(0) invert(1);
+}
 .footer-menu {
     margin-top: 32px;
     border-bottom: 1px solid #FFFFFF33;
@@ -6128,11 +6137,6 @@ body.modal-open {
         flex-direction: row-reverse;
     }
 
-    .business-place {
-        bottom: 15px;
-        right: 15px;
-        max-width: 100px;
-    }
     .tech-spec-info {
         width: calc(50% - 11px);
     }
@@ -6760,11 +6764,6 @@ body.modal-open {
         font-size: 13px;
     }
 
-    .business-place {
-        bottom: 12px;
-        right: 12px;
-        max-width: 84px;
-    }
 
     .tagilskaya-logo span {
         height: 56px;
@@ -6961,7 +6960,14 @@ body.modal-open {
         bottom: 20px;
         right: 20px;
     }
-
+    .sales-office-policy {
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .site-more-info i {
+        width: 20px;
+    }
 }
 
 @media (max-width: 420px) {
