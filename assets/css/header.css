@@ -125,12 +125,12 @@ header .btn:hover{
 .head-menu{
     box-shadow: 4px 4px 30px 0px rgba(83, 99, 116, 0.3);
     background: #FFFFFF;
-    width: 360px;
+    width: 350px;
     padding: 24px;
     border-radius: 40px;
     position: absolute;
     top: 88px;
-    right: 53px;
+    right: 78px;
     z-index: 9991;
     display: none;
 }
@@ -173,9 +173,7 @@ header .btn:hover{
     .logo {
         width: 205px;
     }
-    .head-menu {
-        top: 75px;
-    }
+
     .btn {
         font-size: 16px;
         line-height: 16px;
@@ -185,14 +183,11 @@ header .btn:hover{
         top: 20px;
     }
     .head-menu {
-        top: 78px;
-        right: 18px;
-        border-radius: 30px;
-        padding: 24px;
-        width: 329px;
-    }
-    .head-menu a {
-        padding: 12px 14px;
+        top: 67px;
+        right: 50px;
+        padding: 20px 16px;
+        width: 314px;
+        border-radius: 29px;
     }
     .header-phone {
         padding: 11px 20px;
@@ -211,12 +206,7 @@ header .btn:hover{
         padding: 8px 13px;
         font-size: 15px;
     }
-    .head-menu {
-        top: 67px;
-        right: 18px;
-        padding: 20px 16px;
-        width: 315px;
-    }
+
     header.hide .header-phone {
         padding: 11px 11px;
     }
@@ -268,6 +258,10 @@ header .btn:hover{
     }
     .header-phone .icon-phone {
         width: 18px;
+    }
+    .head-menu {
+        right: 24px;
+        width: 309px;
     }
 }
 @media (max-width: 1020px){
