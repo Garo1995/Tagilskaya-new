@@ -87,6 +87,7 @@ $('.sort-floor').on('click', function (e) {
     e.stopPropagation();
     $('.sort-floor-abs').toggleClass('sort-floor-abs-act');
     $('body').addClass('body-sort-fixed');
+    $('.floor-plan-fixed').removeClass('plan-fixed-open');
 
 })
 $(window).on('click', function (e) {

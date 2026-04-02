@@ -30,6 +30,7 @@ let timerSwiper = new Swiper(".timer-wrapper-slider", {
     slidesPerView: 3,
     spaceBetween: 16,
     slidesPerGroup: 1,
+    allowTouchMove: false,
 
     pagination: {
         el: ".timer-pagination",
@@ -40,16 +41,20 @@ let timerSwiper = new Swiper(".timer-wrapper-slider", {
         1020: {
             slidesPerView: 3,
             slidesPerGroup: 1,
-            allowTouchMove: false,
         },
 
         767: {
             slidesPerView: 2,
             slidesPerGroup: 1,
+            allowTouchMove: true,
+            loop: true,
+
         },
         320: {
             slidesPerView: 1,
             slidesPerGroup: 1,
+            allowTouchMove: true,
+            loop: true,
         },
     },
 });
@@ -105,7 +110,7 @@ let constructDescSwiper = new Swiper(".construct-desc-slider", {
     spaceBetween: 16,
     slidesPerGroup: 1,
     speed: 600,
-
+    allowTouchMove: false,
     navigation: {
         nextEl: ".construct-next",
         prevEl: ".construct-prev",
@@ -117,20 +122,25 @@ let constructDescSwiper = new Swiper(".construct-desc-slider", {
             slidesPerView: 4,
             slidesPerGroup: 1,
         },
-        '767': {
+        '1020': {
             slidesPerView: 3,
             slidesPerGroup: 1,
             loop: true,
+            allowTouchMove: true,
         },
         '640': {
             slidesPerView: 3,
             slidesPerGroup: 1,
             loop: true,
+            allowTouchMove: true,
+
         },
         '320': {
             slidesPerView: 2,
             slidesPerGroup: 1,
             loop: true,
+            allowTouchMove: true,
+
         },
     },
 });
@@ -195,7 +205,7 @@ let newsSwiper = new Swiper(".news-slider", {
     slidesPerGroup: 3,
     spaceBetween: 16,
     speed: 600,
-
+    allowTouchMove: false,
     grid: {
         rows: 2,
         fill: "row",

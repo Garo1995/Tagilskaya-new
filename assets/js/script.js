@@ -359,8 +359,11 @@ let canClose = false;
 
 $('.open-filter-mobile').on('click', function (e) {
     e.stopPropagation();
-    $('.floor-plan-fixed').addClass('plan-fixed-open');
-    $('body').addClass('body-fixed');
+    $('.floor-plan-fixed').toggleClass('plan-fixed-open');
+    $('body').toggleClass('body-fixed');
+
+    $('.sort-floor-abs').removeClass('sort-floor-abs-act');
+
 
 });
 
