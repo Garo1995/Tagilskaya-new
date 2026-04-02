@@ -177,12 +177,11 @@ body {
 
 .tagilskaya-logo span svg{
     width: 100%;
-    height: 100%;
+    height: 161px;
 }
 .tagilskaya-act span {
     opacity: 1;
     transition: 1.1s;
-
 }
 
 .tagilskaya-act .icon-one svg path {
@@ -4477,6 +4476,9 @@ body.modal-open {
     .tagilskaya-logo span {
         height: 113px;
     }
+    .tagilskaya-logo span svg{
+        height: 113px;
+    }
     .tagilskaya-name {
         max-width: 500px;
         width: 100%;
@@ -4534,7 +4536,9 @@ body.modal-open {
     .tagilskaya-logo span {
         height: 76px;
     }
-
+    .tagilskaya-logo span svg{
+        height: 76px;
+    }
     .tagilskaya-name {
         margin-top: 26px;
     }
@@ -6790,7 +6794,9 @@ body.modal-open {
         height: 56px;
     }
 
-
+    .tagilskaya-logo span svg{
+        height: 56px;
+    }
     .tagilskaya-logo {
         gap: 11px;
     }
